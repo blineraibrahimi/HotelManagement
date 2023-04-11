@@ -1,0 +1,17 @@
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe.config
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BLL.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BO.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.DAL.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BLL.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\bin\Debug\HotelManagement.DAL.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.AssemblyReference.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Properties.Resources.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.GenerateResource.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CoreCompileInputs.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CopyComplete
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.exe
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb

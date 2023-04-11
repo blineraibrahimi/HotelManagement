@@ -1,0 +1,11 @@
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BLL.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BLL.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BO.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.DAL.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.DAL.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.AssemblyReference.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.CopyComplete
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.dll
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.pdb
