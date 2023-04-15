@@ -15,3 +15,6 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\D
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CopyComplete
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.exe
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.MainForm.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.EmployeesMainFrom.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.RegisterEmployee.resources
