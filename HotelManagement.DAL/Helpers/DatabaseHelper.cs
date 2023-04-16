@@ -17,22 +17,6 @@ namespace HotelManagement.DAL.Helpers
             return new SqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
         }
 
-        //private static readonly string _connectionString;
-
-        static DatabaseHelper()
-        {
-            //_connectionString = GetSQLConnection();
-        }
-
-        //private static string GetConnectionString()
-        //{
-        //    var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
-        //    var json = File.ReadAllText(path);
-        //    var jObject = JObject.Parse(json);
-        //    var connectionString = (string)jObject["ConnectionString"];
-        //    return connectionString;
-        //}
-
         public static DataTable ExecuteStoredProcedure(string storedProcedureName, SqlParameter[] parameters = null)
         {
             using (var connection = GetSQLConnection())

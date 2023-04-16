@@ -13,6 +13,11 @@ namespace HotelManagement.DAL.Helpers
         public const string UpdateEmployee = "UpdateEmployee";
         public const string DeleteEmployee = "DeleteEmployee";
 
+        public const string GetCustomers = "GetCustomers";
+        public const string CreateCustomer = "CreateCustomer";
+        public const string UpdateCustomer = "UpdateCustomer";
+        public const string DeleteCustomer = "DeleteCustomer";
+
 
     }
 }

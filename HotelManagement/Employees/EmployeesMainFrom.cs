@@ -68,6 +68,7 @@ namespace HotelManagement.Employees
             {
                 MessageBox.Show("Please Select Record to Delete");
             }
+            selectedRows.Clear();
         }
 
         private void updatebtn_Click(object sender, EventArgs e)

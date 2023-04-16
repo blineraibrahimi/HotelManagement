@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.Customers;
 using HotelManagement.Employees;
 
 namespace HotelManagement
@@ -28,7 +29,10 @@ namespace HotelManagement
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (var customerForm = new CustomersMainForm())
+            {
+                customerForm.ShowDialog();
+            }
         }
 
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)

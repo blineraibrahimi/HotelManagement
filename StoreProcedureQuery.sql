@@ -48,3 +48,52 @@ BEGIN
     DELETE FROM Employees WHERE EmployeeID = @Id;
 END
 --==========================================
+GO
+CREATE PROCEDURE GetCustomers
+AS
+BEGIN
+	SELECT CustomerID, CustomerName, CustomerLastname, [Address], ContactNo, CustomerIDNo, [Description] FROM  HotelManagementDB.dbo.Customers
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE CreateCustomer
+	@CustomerName nvarchar(20),
+	@CustomerLastname nvarchar(20),
+	@Address nvarchar(255),
+	@ContactNo nvarchar(30),
+	@CustomerIDNo nvarchar(25),
+	@Description nvarchar(255)
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.Customers(CustomerName, CustomerLastname, [Address], ContactNo, CustomerIDNo, [Description])
+    VALUES (@CustomerName, @CustomerLastname, @Address, @ContactNo, @CustomerIDNo, @Description);
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdateCustomer
+    @Id INT,
+	@CustomerName nvarchar(20),
+	@CustomerLastname nvarchar(20),
+	@Address nvarchar(255),
+	@ContactNo nvarchar(30),
+	@CustomerIDNo nvarchar(25),
+	@Description nvarchar(255)
+AS
+BEGIN
+    UPDATE Customers SET CustomerName = @CustomerName, CustomerLastname = @CustomerLastname, [Address] = @Address, ContactNo = @ContactNo, 
+		CustomerIDNo = @CustomerIDNo, [Description] = @Description
+    WHERE CustomerID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE DeleteCustomer
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Customers WHERE CustomerID = @Id;
+END
+GO
+--==========================================

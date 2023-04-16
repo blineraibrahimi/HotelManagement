@@ -181,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1203, 477);
+            this.ClientSize = new System.Drawing.Size(1203, 455);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.updatebtn);
