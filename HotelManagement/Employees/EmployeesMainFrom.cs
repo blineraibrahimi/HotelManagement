@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using HotelManagement.BO;
 using HotelManagement.DAL;
 using System.Data.SqlClient;
+using System.Xml.Linq;
 
 namespace HotelManagement.Employees
 {
@@ -34,11 +35,19 @@ namespace HotelManagement.Employees
             }
             LoadData();
         }
-        int ID;
+
+        private int ID;
+        List<BO.Employees> selectedRows = new List<BO.Employees>();
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //get the value from the selected row from the first cell
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                selectedRows.Add((BO.Employees)row.DataBoundItem);
+            }
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -61,12 +70,29 @@ namespace HotelManagement.Employees
             }
         }
 
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+            using (var updateEmployeeForm = new UpdateEmployee())
+            {
+                if (selectedRows.Count != 0 ) 
+                {
+                    updateEmployeeForm.employeeData = selectedRows;
+                    updateEmployeeForm.ShowDialog();
+                    selectedRows.Clear();
+                }
+                else 
+                {
+                    MessageBox.Show("Please Select Record to Update");
+                }
+            }
+            LoadData();
+        }
+
         //---------------------------------------------------------------------
         public void LoadData()
         {
             var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
             employeesBindingSource.DataSource = employees;
         }
-
     }
 }
