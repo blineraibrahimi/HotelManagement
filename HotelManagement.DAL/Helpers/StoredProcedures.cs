@@ -9,7 +9,10 @@ namespace HotelManagement.DAL.Helpers
     public static class StoredProcedures
     {
         public const string CreateEmployee = "CreateEmployee";
-        public const string GetEmployees = "GetEmployees"; 
+        public const string GetEmployees = "GetEmployees";
+        public const string UpdateEmployee = "UpdateEmployee";
+        public const string DeleteEmployee = "DeleteEmployee";
+
 
     }
 }

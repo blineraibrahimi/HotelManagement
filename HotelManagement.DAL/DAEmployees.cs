@@ -21,7 +21,7 @@ namespace HotelManagement.DAL
             {
                 var employee = new Employees
                 {
-                    //ID = Convert.ToInt32(row["Id"]),
+                    ID = Convert.ToInt32(row["EmployeeID"]),
                     EmployeeName = Convert.ToString(row["EmployeeName"]),
                     EmployeeLastname = Convert.ToString(row["EmployeeLastname"]),
                     Email = Convert.ToString(row["Email"]),
