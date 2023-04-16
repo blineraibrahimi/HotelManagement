@@ -9,7 +9,6 @@ namespace HotelManagement.BO
 {
     public class Room : BaseClass
     {
-        public string RoomID { get; set; }
         public string RoomName { get; set; }
         public int RoomNumber { get; set; }
         public int Capacity { get; set; }
