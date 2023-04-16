@@ -97,3 +97,52 @@ BEGIN
 END
 GO
 --==========================================
+GO
+CREATE PROCEDURE GetRooms
+AS
+BEGIN
+	SELECT RoomID, RoomName, RoomNumber, Capacity, Rate, [Status], [Description] FROM  HotelManagementDB.dbo.Rooms
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE CreateRoom
+	@RoomName nvarchar(30),
+	@RoomNumber int,
+	@Capacity int,
+	@Rate decimal,
+	@Status nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.Rooms(RoomName, RoomNumber, Capacity, Rate, [Status], [Description])
+    VALUES (@RoomName, @RoomNumber, @Capacity, @Rate, @Status, @Description);
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdateRoom
+    @Id INT,
+	@RoomName nvarchar(30),
+	@RoomNumber int,
+	@Capacity int,
+	@Rate decimal,
+	@Status nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+    UPDATE Rooms SET RoomName = @RoomName, RoomNumber = @RoomNumber, Capacity = @Capacity, Rate = @Rate, 
+		[Status] = @Status, [Description] = @Description
+    WHERE RoomID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE DeleteRoom
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Rooms WHERE RoomID = @Id;
+END
+GO
+--==========================================

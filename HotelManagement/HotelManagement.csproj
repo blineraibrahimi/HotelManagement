@@ -90,22 +90,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rooms\RegisterRoom.cs">
+    <Compile Include="Room\RegisterRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rooms\RegisterRoom.Designer.cs">
+    <Compile Include="Room\RegisterRoom.Designer.cs">
       <DependentUpon>RegisterRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rooms\RoomsMainForm.cs">
+    <Compile Include="Room\RoomsMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rooms\RoomsMainForm.Designer.cs">
+    <Compile Include="Room\RoomsMainForm.Designer.cs">
       <DependentUpon>RoomsMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rooms\UpdateRoom.cs">
+    <Compile Include="Room\UpdateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rooms\UpdateRoom.Designer.cs">
+    <Compile Include="Room\UpdateRoom.Designer.cs">
       <DependentUpon>UpdateRoom.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Customers\CustomersMainForm.resx">
@@ -138,17 +138,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Rooms\RegisterRoom.resx">
+    <EmbeddedResource Include="Room\RegisterRoom.resx">
       <DependentUpon>RegisterRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rooms\RoomsMainForm.resx">
+    <EmbeddedResource Include="Room\RoomsMainForm.resx">
       <DependentUpon>RoomsMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rooms\UpdateRoom.resx">
+    <EmbeddedResource Include="Room\UpdateRoom.resx">
       <DependentUpon>UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="HotelManagement.BO.Customers.datasource" />
     <None Include="HotelManagement.BO.Employees.datasource" />
+    <None Include="HotelManagement.BO.Room.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.Customers;
 using HotelManagement.Employees;
+using HotelManagement.Room;
 
 namespace HotelManagement
 {
@@ -37,7 +38,10 @@ namespace HotelManagement
 
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (var roomForm = new RoomsMainForm())
+            {
+                roomForm.ShowDialog();
+            }
         }
     }
 }
