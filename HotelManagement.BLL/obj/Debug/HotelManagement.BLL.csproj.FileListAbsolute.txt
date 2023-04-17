@@ -9,3 +9,14 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\o
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.CopyComplete
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.dll
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BLL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BLL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BO.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.DAL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\bin\Debug\HotelManagement.DAL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.AssemblyReference.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.csproj.CopyComplete
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BLL\obj\Debug\HotelManagement.BLL.pdb

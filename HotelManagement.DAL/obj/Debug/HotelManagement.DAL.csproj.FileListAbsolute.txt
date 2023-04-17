@@ -7,3 +7,12 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.DAL\o
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.csproj.CopyComplete
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.dll
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\bin\Debug\HotelManagement.DAL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\bin\Debug\HotelManagement.DAL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\bin\Debug\HotelManagement.BO.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.csproj.AssemblyReference.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.csproj.CopyComplete
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.DAL\obj\Debug\HotelManagement.DAL.pdb

@@ -82,6 +82,18 @@
     <Compile Include="Employees\UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="HouseKeeping\HouseKeepingMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeping\HouseKeepingMain.Designer.cs">
+      <DependentUpon>HouseKeepingMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeping\RegisterHouseKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeping\RegisterHouseKeeping.Designer.cs">
+      <DependentUpon>RegisterHouseKeeping.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     <EmbeddedResource Include="Employees\UpdateEmployee.resx">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeping\HouseKeepingMain.resx">
+      <DependentUpon>HouseKeepingMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeping\RegisterHouseKeeping.resx">
+      <DependentUpon>RegisterHouseKeeping.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +167,7 @@
     </EmbeddedResource>
     <None Include="HotelManagement.BO.Customers.datasource" />
     <None Include="HotelManagement.BO.Employees.datasource" />
+    <None Include="HotelManagement.BO.HouseKeeping.datasource" />
     <None Include="HotelManagement.BO.Room.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
