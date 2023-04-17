@@ -25,3 +25,32 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\D
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.RegisterRoom.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.RoomsMainForm.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.UpdateRoom.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.AssemblyReference.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Customers.CustomersMainForm.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Customers.RegisterCustomer.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Customers.UpdateCustomer.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.EmployeesMainFrom.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.RegisterEmployee.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.UpdateEmployee.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeepingMain.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeeping.RegisterHouseKeeping.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.MainForm.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Properties.Resources.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.RegisterRoom.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.RoomsMainForm.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.UpdateRoom.resources
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.GenerateResource.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CoreCompileInputs.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.exe
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe.config
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BLL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BO.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.DAL.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BLL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.DAL.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CopyComplete

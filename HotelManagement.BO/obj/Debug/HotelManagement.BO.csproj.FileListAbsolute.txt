@@ -4,3 +4,9 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BO\ob
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.csproj.CoreCompileInputs.cache
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.dll
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\bin\Debug\HotelManagement.BO.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\bin\Debug\HotelManagement.BO.pdb
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.csproj.AssemblyReference.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.csproj.CoreCompileInputs.cache
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.dll
+C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement.BO\obj\Debug\HotelManagement.BO.pdb

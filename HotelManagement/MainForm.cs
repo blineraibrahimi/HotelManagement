@@ -43,5 +43,13 @@ namespace HotelManagement
                 roomForm.ShowDialog();
             }
         }
+
+        private void houseKeepingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var HouseKeeping = new HouseKeepingMain())
+            {
+                HouseKeeping.ShowDialog();
+            }
+        }
     }
 }

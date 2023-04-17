@@ -41,7 +41,7 @@ namespace HotelManagement.Customers
 
             var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateCustomer, parameters);
 
-            MessageBox.Show("Customer Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Customer Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);    
 
             this.Close();
         }
