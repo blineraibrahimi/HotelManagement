@@ -8,9 +8,10 @@ namespace HotelManagement.BO
 {
     public class Bookings : BaseClass
     {
-        public Room RoomID { get; set; }
-        public Customers CustomerID { get; set; }
-        public Employees EmployeeID { get; set; }
+        public int RoomID { get; set; }
+        public Room Room { get; set; }
+        public int EmployeeID { get; set; }
+        public Employees Employee { get; set; }
         public DateTime BookingDate { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
@@ -21,9 +22,6 @@ namespace HotelManagement.BO
 
         public Bookings() 
         {
-            RoomID = new Room();
-            CustomerID = new Customers();
-            EmployeeID = new Employees();
         }
     }
 }

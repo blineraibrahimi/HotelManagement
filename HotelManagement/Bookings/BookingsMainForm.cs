@@ -1,6 +1,6 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.Customers;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
-using HotelManagement.Employees;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,50 +12,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagement.Customers
+namespace HotelManagement.Bookings
 {
-    public partial class CustomersMainForm : Form
+    public partial class BookingsMainForm : Form
     {
-        public CustomersMainForm()
+        public BookingsMainForm()
         {
             InitializeComponent();
         }
 
-        private void CustomersMainForm_Load(object sender, EventArgs e)
+        private void BookingsMainForm_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
         {
-            using (var registerCustomer = new RegisterCustomer())
+            using (var registerBooking = new RegisterBooking())
             {
-                registerCustomer.ShowDialog();
+                registerBooking.ShowDialog();
             }
             LoadData();
         }
 
         private int ID;
-        List<BO.Customers> selectedRows = new List<BO.Customers>();
-        private void customerDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        List<BO.Bookings> selectedRows = new List<BO.Bookings>();
+        private void bookingDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //get the value from the selected row from the first cell
-            ID = Convert.ToInt32(customerDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            ID = Convert.ToInt32(bookingDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            foreach (DataGridViewRow row in customerDataGridView.SelectedRows)
+            foreach (DataGridViewRow row in bookingDataGridView.SelectedRows)
             {
-                selectedRows.Add((BO.Customers)row.DataBoundItem);
+                selectedRows.Add((BO.Bookings)row.DataBoundItem);
             }
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            using (var updateCustomerForm = new UpdateCustomer())
+            using (var updateBookingForm = new UpdateBooking())
             {
                 if (selectedRows.Count != 0)
                 {
-                    updateCustomerForm.customerData = selectedRows;
-                    updateCustomerForm.ShowDialog();
+                    updateBookingForm.bookingData = selectedRows;
+                    updateBookingForm.ShowDialog();
                     selectedRows.Clear();
                 }
                 else
@@ -72,7 +72,7 @@ namespace HotelManagement.Customers
             {
                 var parameters = new[]
                 {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
+                    new SqlParameter("@Id", SqlDbType.Int) { Value = ID }
                 };
 
                 var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
@@ -90,9 +90,8 @@ namespace HotelManagement.Customers
         //-------------------------------------------
         public void LoadData()
         {
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetCustomers, null).ToCustomerList();
-            customersBindingSource.DataSource = employees;
+            var bookings = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetBookings, null).ToBookingList();
+            bookingDataGridView.DataSource = bookings;
         }
-
     }
 }

@@ -34,6 +34,7 @@
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.houseKeepingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookARoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,56 +46,64 @@
             this.customerToolStripMenuItem,
             this.roomToolStripMenuItem,
             this.roomsToolStripMenuItem,
-            this.houseKeepingToolStripMenuItem});
+            this.houseKeepingToolStripMenuItem,
+            this.bookARoomToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // roomToolStripMenuItem
             // 
             this.roomToolStripMenuItem.Name = "roomToolStripMenuItem";
-            this.roomToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            this.roomToolStripMenuItem.Size = new System.Drawing.Size(14, 24);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // houseKeepingToolStripMenuItem
             // 
             this.houseKeepingToolStripMenuItem.Name = "houseKeepingToolStripMenuItem";
-            this.houseKeepingToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.houseKeepingToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.houseKeepingToolStripMenuItem.Text = "House Keeping";
             this.houseKeepingToolStripMenuItem.Click += new System.EventHandler(this.houseKeepingToolStripMenuItem_Click);
             // 
+            // bookARoomToolStripMenuItem
+            // 
+            this.bookARoomToolStripMenuItem.Name = "bookARoomToolStripMenuItem";
+            this.bookARoomToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
+            this.bookARoomToolStripMenuItem.Text = "Book a room";
+            this.bookARoomToolStripMenuItem.Click += new System.EventHandler(this.bookARoomToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 541);
+            this.ClientSize = new System.Drawing.Size(1067, 666);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel Management.";
@@ -113,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem houseKeepingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookARoomToolStripMenuItem;
     }
 }
 

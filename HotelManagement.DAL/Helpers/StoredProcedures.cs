@@ -27,5 +27,10 @@ namespace HotelManagement.DAL.Helpers
         public const string CreateHouseKeeping = "CreateHouseKeeping";
         public const string UpdateHouseKeeping = "UpdateHouseKeeping";
         public const string DeleteHouseKeeping = "DeleteHouseKeeping";
+
+        public const string GetBookings = "GetBookings";
+        public const string CreateBooking = "CreateBooking";
+        public const string UpdateBooking = "UpdateBooking";
+        public const string DeleteBooking = "DeleteBooking";
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.Bookings;
 using HotelManagement.Customers;
 using HotelManagement.Employees;
 using HotelManagement.Room;
@@ -49,6 +50,14 @@ namespace HotelManagement
             using (var houseKeepingForm = new HouseKeepingMain())
             {
                 houseKeepingForm.ShowDialog();
+            }
+        }
+
+        private void bookARoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var bookARoomForm = new BookingsMainForm())
+            {
+                bookARoomForm.ShowDialog();
             }
         }
     }

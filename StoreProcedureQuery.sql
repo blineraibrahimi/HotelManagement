@@ -192,3 +192,58 @@ BEGIN
 END
 GO
 --==========================================
+GO
+CREATE PROCEDURE GetBookings
+AS
+BEGIN
+	SELECT BookingID, EmployeeID, RoomID, BookingDate, CheckIn, CheckOut, RangeOfDays, TotalCost, [Status], [Description] FROM  HotelManagementDB.dbo.Bookings
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE CreateBooking
+	@EmployeeID int,
+	@RoomID int,
+	@BookingDate date,
+	@CheckIn datetime,
+	@CheckOut datetime,
+	@RangeOfDays int,
+	@TotalCost decimal,
+	@Status nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.Bookings(EmployeeID, RoomID, BookingDate, CheckIn, CheckOut, RangeOfDays, TotalCost, [Status], [Description])
+    VALUES (@EmployeeID, @RoomID, @BookingDate, @CheckIn, @CheckOut, @RangeOfDays, @TotalCost, @Status, @Description);
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdateBooking
+    @Id INT,
+	@EmployeeID int,
+	@RoomID int,
+	@BookingDate date,
+	@CheckIn datetime,
+	@CheckOut datetime,
+	@RangeOfDays int,
+	@TotalCost decimal,
+	@Status nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+    UPDATE Bookings SET EmployeeID = @EmployeeID, RoomID = @RoomID, BookingDate = @BookingDate, CheckIn = @CheckIn, CheckOut = @CheckOut, RangeOfDays = @RangeOfDays, 
+	TotalCost = @TotalCost, [Status] = @Status, [Description] = @Description
+    WHERE BookingID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE DeleteBooking
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Bookings WHERE BookingID = @Id;
+END
+GO
+--==========================================

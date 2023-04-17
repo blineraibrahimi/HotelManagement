@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingBLL.cs" />
     <Compile Include="CustomersBLL.cs" />
     <Compile Include="EmployeesBLL.cs" />
+    <Compile Include="HouseKeepingBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomsBLL.cs" />
   </ItemGroup>

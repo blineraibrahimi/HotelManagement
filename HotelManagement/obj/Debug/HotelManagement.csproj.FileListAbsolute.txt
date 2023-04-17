@@ -56,3 +56,6 @@ C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\bin\Debug\HotelManage
 C:\Users\Ardi\Source\Repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CopyComplete
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeepingMain.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeeping.RegisterHouseKeeping.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.BookingsMainForm.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.RegisterBooking.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.UpdateBooking.resources
