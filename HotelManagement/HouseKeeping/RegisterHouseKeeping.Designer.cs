@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.hsRegisterbtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -35,19 +36,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtRoomStatus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_dateID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtRoomID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmpName = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.houseKeepingDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.cmbEmployee = new System.Windows.Forms.ComboBox();
+            this.cmbRoom = new System.Windows.Forms.ComboBox();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // hsRegisterbtn
             // 
-            this.hsRegisterbtn.Location = new System.Drawing.Point(100, 305);
-            this.hsRegisterbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.hsRegisterbtn.Location = new System.Drawing.Point(159, 331);
+            this.hsRegisterbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hsRegisterbtn.Name = "hsRegisterbtn";
-            this.hsRegisterbtn.Size = new System.Drawing.Size(129, 25);
+            this.hsRegisterbtn.Size = new System.Drawing.Size(172, 31);
             this.hsRegisterbtn.TabIndex = 70;
             this.hsRegisterbtn.Text = "Register";
             this.hsRegisterbtn.UseVisualStyleBackColor = true;
@@ -57,109 +61,119 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(51, 24);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(97, 32);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(259, 26);
+            this.label9.Size = new System.Drawing.Size(331, 32);
             this.label9.TabIndex = 69;
             this.label9.Text = "Register Housekeeping";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 226);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(89, 280);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(75, 16);
             this.label6.TabIndex = 68;
             this.label6.Text = "Description";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(128, 223);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Location = new System.Drawing.Point(200, 276);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(182, 20);
+            this.txtDescription.Size = new System.Drawing.Size(241, 22);
             this.txtDescription.TabIndex = 67;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 188);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(80, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(84, 16);
             this.label4.TabIndex = 64;
             this.label4.Text = "Room Status";
             // 
             // txtRoomStatus
             // 
-            this.txtRoomStatus.Location = new System.Drawing.Point(128, 188);
-            this.txtRoomStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRoomStatus.Location = new System.Drawing.Point(200, 233);
+            this.txtRoomStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRoomStatus.Name = "txtRoomStatus";
-            this.txtRoomStatus.Size = new System.Drawing.Size(182, 20);
+            this.txtRoomStatus.Size = new System.Drawing.Size(241, 22);
             this.txtRoomStatus.TabIndex = 63;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(128, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 62;
             this.label3.Text = "Date";
-            // 
-            // txt_dateID
-            // 
-            this.txt_dateID.Location = new System.Drawing.Point(128, 149);
-            this.txt_dateID.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_dateID.Name = "txt_dateID";
-            this.txt_dateID.Size = new System.Drawing.Size(182, 20);
-            this.txt_dateID.TabIndex = 61;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(104, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 60;
             this.label2.Text = "Room ID";
-            // 
-            // txtRoomID
-            // 
-            this.txtRoomID.Location = new System.Drawing.Point(128, 111);
-            this.txtRoomID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(182, 20);
-            this.txtRoomID.TabIndex = 59;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(55, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(109, 16);
             this.label1.TabIndex = 58;
             this.label1.Text = "Employee Name";
             // 
-            // txtEmpName
+            // contextMenuStrip1
             // 
-            this.txtEmpName.Location = new System.Drawing.Point(128, 71);
-            this.txtEmpName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEmpName.Name = "txtEmpName";
-            this.txtEmpName.Size = new System.Drawing.Size(182, 20);
-            this.txtEmpName.TabIndex = 57;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // houseKeepingDatePicker
+            // 
+            this.houseKeepingDatePicker.Location = new System.Drawing.Point(200, 185);
+            this.houseKeepingDatePicker.Name = "houseKeepingDatePicker";
+            this.houseKeepingDatePicker.Size = new System.Drawing.Size(241, 22);
+            this.houseKeepingDatePicker.TabIndex = 72;
+            this.houseKeepingDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            // 
+            // cmbEmployee
+            // 
+            this.cmbEmployee.FormattingEnabled = true;
+            this.cmbEmployee.Location = new System.Drawing.Point(200, 89);
+            this.cmbEmployee.Name = "cmbEmployee";
+            this.cmbEmployee.Size = new System.Drawing.Size(241, 24);
+            this.cmbEmployee.TabIndex = 73;
+            // 
+            // cmbRoom
+            // 
+            this.cmbRoom.DataSource = this.roomBindingSource;
+            this.cmbRoom.DisplayMember = "ID";
+            this.cmbRoom.FormattingEnabled = true;
+            this.cmbRoom.Location = new System.Drawing.Point(200, 139);
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Size = new System.Drawing.Size(241, 24);
+            this.cmbRoom.TabIndex = 74;
+            this.cmbRoom.ValueMember = "ID";
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataSource = typeof(HotelManagement.BO.Room);
             // 
             // RegisterHouseKeeping
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(353, 342);
+            this.ClientSize = new System.Drawing.Size(512, 378);
+            this.Controls.Add(this.cmbRoom);
+            this.Controls.Add(this.cmbEmployee);
+            this.Controls.Add(this.houseKeepingDatePicker);
             this.Controls.Add(this.hsRegisterbtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
@@ -167,14 +181,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtRoomStatus);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_dateID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtRoomID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEmpName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterHouseKeeping";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register HouseKeeping";
+            this.Load += new System.EventHandler(this.RegisterHouseKeeping_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,10 +203,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtRoomStatus;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_dateID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRoomID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmpName;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DateTimePicker houseKeepingDatePicker;
+        private System.Windows.Forms.ComboBox cmbEmployee;
+        private System.Windows.Forms.ComboBox cmbRoom;
+        private System.Windows.Forms.BindingSource roomBindingSource;
     }
 }

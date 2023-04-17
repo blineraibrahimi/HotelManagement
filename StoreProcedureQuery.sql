@@ -146,3 +146,49 @@ BEGIN
 END
 GO
 --==========================================
+GO
+CREATE PROCEDURE GetHouseKeeping
+AS
+BEGIN
+	SELECT HousekeepingID, EmployeeID, RoomID, HousekeepingDate, HousekeppingStatus, [Description] FROM  HotelManagementDB.dbo.HouseKeeping
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE CreateHouseKeeping
+	@EmployeeID int,
+	@RoomID int,
+	@HousekeepingDate datetime,
+	@HousekeppingStatus nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.HouseKeeping(EmployeeID, RoomID, HousekeepingDate, HousekeppingStatus, [Description])
+    VALUES (@EmployeeID, @RoomID, @HousekeepingDate, @HousekeppingStatus, @Description);
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdateHouseKeeping
+    @Id INT,
+	@EmployeeID int,
+	@RoomID int,
+	@HousekeepingDate datetime,
+	@HousekeppingStatus nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+    UPDATE HouseKeeping SET EmployeeID = @EmployeeID, RoomID = @RoomID, HousekeepingDate = @HousekeepingDate, HousekeppingStatus = @HousekeppingStatus, [Description] = @Description
+    WHERE HousekeepingID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE DeleteHouseKeeping
+    @Id INT
+AS
+BEGIN
+    DELETE FROM HouseKeeping WHERE HousekeepingID = @Id;
+END
+GO
+--==========================================

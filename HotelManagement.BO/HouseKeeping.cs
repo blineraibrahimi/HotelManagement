@@ -11,7 +11,6 @@ namespace HotelManagement.BO
         public int  EmployeeID { get; set; }
         public Employees Employee { get; set; }
         public int RoomID { get; set; }
-
         public Room Room { get; set; }
         public DateTime HousekeepingDate { get; set; }
         public string HousekeepingStatus { get; set; }

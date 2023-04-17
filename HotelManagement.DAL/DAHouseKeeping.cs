@@ -24,7 +24,7 @@ namespace HotelManagement.DAL
                     EmployeeID = Convert.ToInt32(row["EmployeeID"]),
                     RoomID = Convert.ToInt32(row["RoomID"]),
                     HousekeepingDate = Convert.ToDateTime(row["HouseKeepingDate"]),
-                    HousekeepingStatus = Convert.ToString(row["HouseKeepingStatus"]),
+                    HousekeepingStatus = Convert.ToString(row["HousekeppingStatus"]),
                     Description = Convert.ToString(row["Description"])
                 };
 

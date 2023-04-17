@@ -1,11 +1,11 @@
-CREATE DATABASE HotelManagement;
+CREATE DATABASE HotelManagementDB;
 
 CREATE TABLE [Customers] (
   [CustomerID] int NOT NULL IDENTITY(1,1),
   [CustomerName] nvarchar(20) ,
   [CustomerLastname] nvarchar(20),
   [Address] nvarchar(255),
-  [ContatcNo] nvarchar(30),
+  [ContactNo] nvarchar(30),
   [CustomerIDNo] nvarchar(25),
   [Description] nvarchar(255),
   PRIMARY KEY ([CustomerID])
@@ -36,13 +36,13 @@ CREATE TABLE [Rooms] (
 );
 
 CREATE TABLE [HouseKeeping] (
-  [HousekeepindID] int NOT NULL IDENTITY(1,1),
+  [HousekeepingID] int NOT NULL IDENTITY(1,1),
   [EmployeeID] int NOT NULL,
   [RoomID] int NOT NULL,
   [HousekeepingDate] datetime,
   [HousekeppingStatus] nvarchar(10),
   [Description] nvarchar(255),
-  PRIMARY KEY ([HousekeepindID]),
+  PRIMARY KEY ([HousekeepingID]),
   FOREIGN KEY (EmployeeID) REFERENCES EMPLOYEE(EmployeeID),
   FOREIGN KEY (RoomID) REFERENCES ROOMS(RoomID)
 );

@@ -46,9 +46,9 @@ namespace HotelManagement
 
         private void houseKeepingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var HouseKeeping = new HouseKeepingMain())
+            using (var houseKeepingForm = new HouseKeepingMain())
             {
-                HouseKeeping.ShowDialog();
+                houseKeepingForm.ShowDialog();
             }
         }
     }

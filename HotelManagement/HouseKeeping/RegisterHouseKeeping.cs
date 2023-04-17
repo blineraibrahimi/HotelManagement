@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL.Helpers;
+﻿using HotelManagement.DAL;
+using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,32 +19,50 @@ namespace HotelManagement.HouseKeeping
         public RegisterHouseKeeping()
         {
             InitializeComponent();
+            cmbRoom.DisplayMember = "RoomName";
+            cmbRoom.ValueMember = "ID";
+
+            cmbEmployee.DisplayMember = "EmployeeName";
+            cmbEmployee.ValueMember = "ID";
         }
 
         private void hsRegisterbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEmpName.Text) || string.IsNullOrWhiteSpace(txtRoomID.Text) ||
-               string.IsNullOrWhiteSpace(txtRoomStatus.Text) || string.IsNullOrWhiteSpace(txt_dateID.Text) ||
-               string.IsNullOrWhiteSpace(txtDescription.Text))
+            if (cmbEmployee.SelectedIndex == 0 || cmbRoom.SelectedIndex == 0 ||
+               string.IsNullOrWhiteSpace(txtRoomStatus.Text) || string.IsNullOrWhiteSpace(txtDescription.Text))
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
+            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
+
             var parameters = new[]
                 {
-                    new SqlParameter("@CustomerName", SqlDbType.VarChar) { Value = txtEmpName.Text },
-                    new SqlParameter("@CustomerLastname", SqlDbType.VarChar) { Value = txtRoomID.Text },
-                    new SqlParameter("@Address", SqlDbType.VarChar) { Value = txt_dateID.Text },
-                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = txtRoomStatus.Text },
+                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = selectedRoom.ID },
+                    new SqlParameter("@HousekeepingDate", SqlDbType.DateTime) { Value = houseKeepingDatePicker.Value },
+                    new SqlParameter("@HousekeppingStatus", SqlDbType.VarChar) { Value = txtRoomStatus.Text },
                     new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtDescription.Text },
                 };
 
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateCustomer, parameters);
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateHouseKeeping, parameters);
 
-            MessageBox.Show("Customer Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Housekeeping Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();
+        }
+
+        private void RegisterHouseKeeping_Load(object sender, EventArgs e)
+        {
+            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
+            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
+            cmbRoom.DataSource = rooms;
+
+            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
+            employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
+            cmbEmployee.DataSource = employees;
         }
     }
 }
