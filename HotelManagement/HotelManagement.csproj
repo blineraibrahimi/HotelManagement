@@ -112,6 +112,12 @@
     <Compile Include="HouseKeeping\RegisterHouseKeeping.Designer.cs">
       <DependentUpon>RegisterHouseKeeping.cs</DependentUpon>
     </Compile>
+    <Compile Include="HouseKeeping\UpdateHouseKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeping\UpdateHouseKeeping.Designer.cs">
+      <DependentUpon>UpdateHouseKeeping.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HouseKeeping\RegisterHouseKeeping.resx">
       <DependentUpon>RegisterHouseKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeping\UpdateHouseKeeping.resx">
+      <DependentUpon>UpdateHouseKeeping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

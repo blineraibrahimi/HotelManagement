@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.Bookings;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using HotelManagement.HouseKeeping;
 using System;
@@ -50,7 +51,20 @@ namespace HotelManagement
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-
+            using (var updateHouseKeeping = new UpdateHouseKeeping())
+            {
+                if (selectedRows.Count != 0)
+                {
+                    updateHouseKeeping.houseKeepingData = selectedRows;
+                    updateHouseKeeping.ShowDialog();
+                    selectedRows.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Record to Update");
+                }
+            }
+            LoadData();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)

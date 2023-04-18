@@ -59,3 +59,4 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\D
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.BookingsMainForm.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.RegisterBooking.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Bookings.UpdateBooking.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeeping.UpdateHouseKeeping.resources
