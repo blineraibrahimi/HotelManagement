@@ -20,7 +20,7 @@ namespace HotelManagement.DAL
             {
                 var booking = new Bookings
                 {
-                    ID = Convert.ToInt32(row["RoomID"]),
+                    ID = Convert.ToInt32(row["BookingID"]),
                     RoomID = Convert.ToInt32(row["RoomID"]),
                     EmployeeID= Convert.ToInt32(row["EmployeeID"]),
                     BookingDate = Convert.ToDateTime(row["BookingDate"]),

@@ -111,6 +111,7 @@
             this.cmbRoom.Size = new System.Drawing.Size(241, 24);
             this.cmbRoom.TabIndex = 80;
             this.cmbRoom.ValueMember = "ID";
+            this.cmbRoom.SelectedIndexChanged += new System.EventHandler(this.cmbRoom_SelectedIndexChanged);
             // 
             // cmbEmployee
             // 
@@ -179,6 +180,7 @@
             this.checkOutDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkOutDatePicker.TabIndex = 84;
             this.checkOutDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            this.checkOutDatePicker.ValueChanged += new System.EventHandler(this.checkOutDatePicker_ValueChanged);
             // 
             // label2
             // 

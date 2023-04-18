@@ -23,25 +23,29 @@ namespace HotelManagement.Bookings
 
             cmbEmployee.DisplayMember = "EmployeeName";
             cmbEmployee.ValueMember = "ID";
-        }
 
+            txtRangeOfDays.Enabled = false;
+            txtTotalCost.Enabled = false;
+        }
+        int roomId;
+        string roomName;
+        decimal roomPrice;
         private void bookRegisterbtn_Click(object sender, EventArgs e)
         {
-            if (cmbEmployee.SelectedIndex == 0 || cmbRoom.SelectedIndex == 0 ||
-              string.IsNullOrWhiteSpace(txtRangeOfDays.Text) || string.IsNullOrWhiteSpace(txtDescription.Text)
+            if (cmbEmployee.SelectedIndex == 0 || cmbRoom.SelectedIndex == 0 || string.IsNullOrWhiteSpace(txtDescription.Text)
               || string.IsNullOrWhiteSpace(txtTotalCost.Text) || string.IsNullOrWhiteSpace(txtStatus.Text))
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
+            //var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
             var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
 
             var parameters = new[]
                 {
                     new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
-                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = selectedRoom.ID },
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
                     new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDatePicker.Value },
                     new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkInDatePicker.Value },
                     new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOutDatePicker.Value },
@@ -67,6 +71,26 @@ namespace HotelManagement.Bookings
             var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
             employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
             cmbEmployee.DataSource = employees;
+        }
+
+        private void checkOutDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            int numberOfDays = (int)(checkOutDatePicker.Value - checkInDatePicker.Value).TotalDays;
+            txtRangeOfDays.Text = Convert.ToString(numberOfDays);
+            
+            txtTotalCost.Text = Convert.ToString(numberOfDays * roomPrice);
+        }
+
+        private void cmbRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BO.Room selectedRoom = cmbRoom.SelectedItem as BO.Room;
+            if (selectedRoom != null)
+            {
+                roomId = selectedRoom.ID;
+                roomName = selectedRoom.RoomName;
+                roomPrice = selectedRoom.Rate;
+                // do something with roomId, roomName, and roomPrice
+            }
         }
     }
 }

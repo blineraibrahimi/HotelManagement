@@ -20,5 +20,9 @@ namespace HotelManagement.BO
         {
 
         }
+        public string RoomDetails
+        {
+            get { return $"{ID}: {RoomName} (${Rate})"; }
+        }
     }
 }

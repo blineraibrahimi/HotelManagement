@@ -72,7 +72,7 @@ namespace HotelManagement.Bookings
             {
                 var parameters = new[]
                 {
-                    new SqlParameter("@Id", SqlDbType.Int) { Value = ID }
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
                 };
 
                 var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);

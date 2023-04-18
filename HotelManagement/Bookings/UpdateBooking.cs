@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.BO;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,21 @@ namespace HotelManagement.Bookings
 
             cmbEmployee.DisplayMember = "EmployeeName";
             cmbEmployee.ValueMember = "ID";
+
+            txtRangeOfDays.Enabled = false;
+            txtTotalCost.Enabled = false;
         }
 
         public List<BO.Bookings> bookingData { get; set; }
         private int ID;
-
+        public BO.Room selectedRoom;
+        int roomId;
+        string roomName;
+        decimal roomPrice;
         private void UpdateBooking_Load(object sender, EventArgs e)
         {
             var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
-            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
+            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room"});
             cmbRoom.DataSource = rooms;
 
             var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
@@ -41,8 +48,8 @@ namespace HotelManagement.Bookings
             foreach (BO.Bookings obj in bookingData)
             {
                 ID = obj.ID;
-                cmbEmployee.SelectedItem = obj.EmployeeID;
-                cmbRoom.SelectedItem =obj.RoomID;
+                cmbEmployee.SelectedValue = obj.EmployeeID;
+                cmbRoom.SelectedValue =obj.RoomID;
                 bookingDatePicker.Value = obj.BookingDate;
                 checkInDatePicker.Value = obj.CheckIn;
                 checkOutDatePicker.Value = obj.CheckOut;
@@ -64,7 +71,7 @@ namespace HotelManagement.Bookings
                 {
                     new SqlParameter("@Id", SqlDbType.Int) { Value = ID },
                     new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
-                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = selectedRoom.ID },
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
                     new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDatePicker.Value },
                     new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkInDatePicker.Value },
                     new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOutDatePicker.Value },
@@ -85,6 +92,26 @@ namespace HotelManagement.Bookings
         private void cancelbtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkOutDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            int numberOfDays = (int)(checkOutDatePicker.Value - checkInDatePicker.Value).TotalDays;
+            txtRangeOfDays.Text = Convert.ToString(numberOfDays);
+
+            txtTotalCost.Text = Convert.ToString(numberOfDays * roomPrice);
+        }
+
+        private void cmbRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedRoom = cmbRoom.SelectedItem as BO.Room;
+            if (selectedRoom != null)
+            {
+                roomId = selectedRoom.ID;
+                roomName = selectedRoom.RoomName;
+                roomPrice = selectedRoom.Rate;
+                // do something with roomId, roomName, and roomPrice
+            }
         }
     }
 }
