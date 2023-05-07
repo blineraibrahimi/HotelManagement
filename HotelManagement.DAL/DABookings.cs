@@ -37,5 +37,53 @@ namespace HotelManagement.DAL
 
             return bookings;
         }
+
+        public static void RegisterBooking(int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkOut, int rangeOfDays, decimal totalCost, string status, string description)
+        {
+            var parameters = new[]
+               {
+                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = empId },
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
+                    new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDate },
+                    new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkIn },
+                    new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOut },
+                    new SqlParameter("@RangeOfDays", SqlDbType.Int) { Value = rangeOfDays },
+                    new SqlParameter("@TotalCost", SqlDbType.Decimal) { Value = totalCost },
+                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = status },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = description }
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateBooking, parameters);
+        }
+
+        public static void UpdateBooking(int id, int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkOut, int rangeOfDays, decimal totalCost, string status, string description)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@Id", SqlDbType.Int) { Value = id },
+                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = empId },
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
+                    new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDate },
+                    new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkIn },
+                    new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOut},
+                    new SqlParameter("@RangeOfDays", SqlDbType.Int) { Value = rangeOfDays },
+                    new SqlParameter("@TotalCost", SqlDbType.Decimal) { Value = totalCost },
+                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = status },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = description }
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateBooking, parameters);
+        }
+
+        public static void DeleteBooking(int id)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
+
+        }
     }
 }

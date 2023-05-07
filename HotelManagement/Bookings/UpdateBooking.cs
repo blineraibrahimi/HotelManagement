@@ -1,4 +1,5 @@
-﻿using HotelManagement.BO;
+﻿using HotelManagement.BLL;
+using HotelManagement.BO;
 using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using System;
@@ -37,13 +38,8 @@ namespace HotelManagement.Bookings
         decimal roomPrice;
         private void UpdateBooking_Load(object sender, EventArgs e)
         {
-            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
-            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room"});
-            cmbRoom.DataSource = rooms;
-
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
-            employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
-            cmbEmployee.DataSource = employees;
+            cmbRoom.DataSource = BookingBLL.LoadRoomCMB();
+            cmbEmployee.DataSource = BookingBLL.LoadEmployeeCMB();
 
             foreach (BO.Bookings obj in bookingData)
             {
@@ -62,29 +58,22 @@ namespace HotelManagement.Bookings
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
+            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
+
+            var message = BookingBLL.UpdateBooking(ID, selectedEmployee.ID, selectedRoom.ID, bookingDatePicker.Value, 
+                checkInDatePicker.Value, checkOutDatePicker.Value, Convert.ToInt32(txtRangeOfDays.Text), Convert.ToDecimal(txtTotalCost.Text),
+                txtStatus.Text, txtDescription.Text);
+
+            if (message is true)
             {
-                var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
-                var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
-
-                var parameters = new[]
-                {
-                    new SqlParameter("@Id", SqlDbType.Int) { Value = ID },
-                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
-                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
-                    new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDatePicker.Value },
-                    new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkInDatePicker.Value },
-                    new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOutDatePicker.Value },
-                    new SqlParameter("@RangeOfDays", SqlDbType.VarChar) { Value = txtRangeOfDays.Text },
-                    new SqlParameter("@TotalCost", SqlDbType.VarChar) { Value = txtTotalCost.Text },
-                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = txtStatus.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtDescription.Text }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateBooking, parameters);
-
                 MessageBox.Show("Record Updated Successfully!");
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             bookingData.Clear();
         }

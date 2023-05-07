@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BLL;
 
 namespace HotelManagement.Bookings
 {
@@ -23,7 +24,7 @@ namespace HotelManagement.Bookings
 
         private void BookingsMainForm_Load(object sender, EventArgs e)
         {
-            LoadData();
+            bookingsBindingSource.DataSource = BookingBLL.LoadData();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace HotelManagement.Bookings
             {
                 registerBooking.ShowDialog();
             }
-            LoadData();
+            bookingsBindingSource.DataSource = BookingBLL.LoadData();
         }
 
         private int ID;
@@ -63,35 +64,23 @@ namespace HotelManagement.Bookings
                     MessageBox.Show("Please Select Record to Update");
                 }
             }
-            LoadData();
+            bookingsBindingSource.DataSource = BookingBLL.LoadData();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = BookingBLL.DeleteEmployee(ID);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
-
                 MessageBox.Show("Record Deleted Successfully!");
-                LoadData();
+                bookingsBindingSource.DataSource = BookingBLL.LoadData();
             }
             else
             {
                 MessageBox.Show("Please Select Record to Delete");
             }
             selectedRows.Clear();
-        }
-
-        //-------------------------------------------
-        public void LoadData()
-        {
-            var bookings = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetBookings, null).ToBookingList();
-            bookingDataGridView.DataSource = bookings;
         }
     }
 }

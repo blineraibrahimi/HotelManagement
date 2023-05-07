@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.BLL;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
@@ -27,35 +28,24 @@ namespace HotelManagement.Bookings
             txtRangeOfDays.Enabled = false;
             txtTotalCost.Enabled = false;
         }
+
         int roomId;
         string roomName;
         decimal roomPrice;
         private void bookRegisterbtn_Click(object sender, EventArgs e)
         {
-            if (cmbEmployee.SelectedIndex == 0 || cmbRoom.SelectedIndex == 0 || string.IsNullOrWhiteSpace(txtDescription.Text)
-              || string.IsNullOrWhiteSpace(txtTotalCost.Text) || string.IsNullOrWhiteSpace(txtStatus.Text))
+            //var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
+            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
+
+            var message = BookingBLL.RegisterBooking(selectedEmployee.ID, roomId, bookingDatePicker.Value,
+                checkInDatePicker.Value, checkOutDatePicker.Value, Convert.ToInt32(txtRangeOfDays.Text), Convert.ToDecimal(txtTotalCost.Text),
+                txtStatus.Text, txtDescription.Text);
+
+            if (message is false)
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            //var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
-            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
-
-            var parameters = new[]
-                {
-                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
-                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
-                    new SqlParameter("@BookingDate", SqlDbType.DateTime) { Value = bookingDatePicker.Value },
-                    new SqlParameter("@CheckIn", SqlDbType.DateTime) { Value = checkInDatePicker.Value },
-                    new SqlParameter("@CheckOut", SqlDbType.DateTime) { Value = checkOutDatePicker.Value },
-                    new SqlParameter("@RangeOfDays", SqlDbType.VarChar) { Value = txtRangeOfDays.Text },
-                    new SqlParameter("@TotalCost", SqlDbType.VarChar) { Value = txtTotalCost.Text },
-                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = txtStatus.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtDescription.Text }
-                };
-
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateBooking, parameters);
 
             MessageBox.Show("Room is booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -64,13 +54,8 @@ namespace HotelManagement.Bookings
 
         private void RegisterBooking_Load(object sender, EventArgs e)
         {
-            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
-            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
-            cmbRoom.DataSource = rooms;
-
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
-            employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
-            cmbEmployee.DataSource = employees;
+            cmbRoom.DataSource = BookingBLL.LoadRoomCMB();
+            cmbEmployee.DataSource = BookingBLL.LoadEmployeeCMB();
         }
 
         private void checkOutDatePicker_ValueChanged(object sender, EventArgs e)

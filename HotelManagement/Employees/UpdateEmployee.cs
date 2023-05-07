@@ -12,6 +12,7 @@ using HotelManagement.BO;
 using HotelManagement.DAL;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using HotelManagement.BLL;
 
 namespace HotelManagement.Employees
 {
@@ -42,25 +43,17 @@ namespace HotelManagement.Employees
 
         private void empUpdatebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = EmployeesBLL.UpdateEmployee(ID, txtEmpName.Text, txtEmpLastName.Text, txtEmpEmail.Text, txtEmpContactNo.Text, txtEmpLoginID.Text, txtEmpPassword.Text, txtEmpType.Text, txtEmpDescription.Text);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID },
-                    new SqlParameter("@EmployeeName", SqlDbType.VarChar) { Value = txtEmpName.Text },
-                    new SqlParameter("@EmployeeLastName", SqlDbType.VarChar) { Value = txtEmpLastName.Text },
-                    new SqlParameter("@Email", SqlDbType.VarChar) { Value = txtEmpEmail.Text },
-                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = txtEmpContactNo.Text },
-                    new SqlParameter("@LoginID", SqlDbType.VarChar) { Value = txtEmpLoginID.Text },
-                    new SqlParameter("@Password", SqlDbType.VarChar) { Value = txtEmpPassword.Text },
-                    new SqlParameter("@EmployeeType", SqlDbType.VarChar) { Value = txtEmpType.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtEmpDescription.Text },
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateEmployee, parameters);
-
                 MessageBox.Show("Record Updated Successfully!");
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             employeeData.Clear();
         }

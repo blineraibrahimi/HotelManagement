@@ -12,6 +12,7 @@ using HotelManagement.BO;
 using HotelManagement.DAL;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using HotelManagement.BLL;
 
 namespace HotelManagement.Employees
 {
@@ -24,7 +25,7 @@ namespace HotelManagement.Employees
 
         private void EmployeesMainFrom_Load(object sender, EventArgs e)
         {
-          LoadData();
+            employeesBindingSource.DataSource = EmployeesBLL.LoadData();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace HotelManagement.Employees
             {
                 registerEmployeeForm.ShowDialog();
             }
-            LoadData();
+            employeesBindingSource.DataSource = EmployeesBLL.LoadData();
         }
 
         private int ID;
@@ -52,17 +53,12 @@ namespace HotelManagement.Employees
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = EmployeesBLL.DeleteEmployee(ID);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteEmployee, parameters);
-
                 MessageBox.Show("Record Deleted Successfully!");
-                LoadData();
+                employeesBindingSource.DataSource = EmployeesBLL.LoadData();
             }
             else
             {
@@ -79,21 +75,14 @@ namespace HotelManagement.Employees
                 {
                     updateEmployeeForm.employeeData = selectedRows;
                     updateEmployeeForm.ShowDialog();
-                    selectedRows.Clear();
                 }
                 else 
                 {
                     MessageBox.Show("Please Select Record to Update");
                 }
             }
-            LoadData();
-        }
-
-        //---------------------------------------------------------------------
-        public void LoadData()
-        {
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
-            employeesBindingSource.DataSource = employees;
+            employeesBindingSource.DataSource = EmployeesBLL.LoadData();
+            selectedRows.Clear();
         }
     }
 }

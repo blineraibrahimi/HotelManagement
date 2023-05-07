@@ -37,5 +37,53 @@ namespace HotelManagement.DAL
 
             return employees;
         }
+
+        public static void SaveEmployeeToDB(string empName, string empLastname, string empEmail, string empContatctNo,
+            string empLoginID, string empPassword, string empType, string empDescription)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@EmployeeName", SqlDbType.VarChar) { Value = empName },
+                    new SqlParameter("@EmployeeLastName", SqlDbType.VarChar) { Value = empLastname},
+                    new SqlParameter("@Email", SqlDbType.VarChar) { Value = empEmail },
+                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = empContatctNo },
+                    new SqlParameter("@LoginID", SqlDbType.VarChar) { Value = empLoginID },
+                    new SqlParameter("@Password", SqlDbType.VarChar) { Value = empPassword },
+                    new SqlParameter("@EmployeeType", SqlDbType.VarChar) { Value = empType },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = empDescription },
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateEmployee, parameters);
+        }
+
+        public static void UpdateEmployee(int id,string empName, string empLastname, string empEmail, string empContatctNo,
+              string empLoginID, string empPassword, string empType, string empDescription) 
+        {
+            var parameters = new[]
+               {
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id },
+                    new SqlParameter("@EmployeeName", SqlDbType.VarChar) { Value = empName },
+                    new SqlParameter("@EmployeeLastName", SqlDbType.VarChar) { Value = empLastname},
+                    new SqlParameter("@Email", SqlDbType.VarChar) { Value = empEmail },
+                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = empContatctNo },
+                    new SqlParameter("@LoginID", SqlDbType.VarChar) { Value = empLoginID },
+                    new SqlParameter("@Password", SqlDbType.VarChar) { Value = empPassword },
+                    new SqlParameter("@EmployeeType", SqlDbType.VarChar) { Value = empType },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = empDescription },
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateEmployee, parameters);
+
+        }
+
+        public static void DeleteEmployee(int id)
+        {
+            var parameters = new[]
+            { 
+                new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+            };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteEmployee, parameters);
+        }
     }
 }
