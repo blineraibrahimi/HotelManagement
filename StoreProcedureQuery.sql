@@ -72,6 +72,24 @@ END
 GO
 --==========================================
 GO
+CREATE PROCEDURE CreateVisitor
+	@CustomerName nvarchar(20),
+	@CustomerLastname nvarchar(20),
+	@Address nvarchar(255),
+	@ContactNo nvarchar(30),
+	@CustomerIDNo nvarchar(25),
+	@Description nvarchar(255),
+	@VisitorId int OUTPUT
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.Customers(CustomerName, CustomerLastname, [Address], ContactNo, CustomerIDNo, [Description])
+    VALUES (@CustomerName, @CustomerLastname, @Address, @ContactNo, @CustomerIDNo, @Description);
+
+	SET @VisitorId = SCOPE_IDENTITY();
+END
+GO
+--==========================================
+GO
 CREATE PROCEDURE UpdateCustomer
     @Id INT,
 	@CustomerName nvarchar(20),
@@ -210,11 +228,14 @@ CREATE PROCEDURE CreateBooking
 	@RangeOfDays int,
 	@TotalCost decimal,
 	@Status nvarchar(10),
-	@Description nvarchar(255)
+	@Description nvarchar(255),
+	@BookingId int OUTPUT 
 AS
 BEGIN
 	INSERT INTO HotelManagementDB.dbo.Bookings(EmployeeID, RoomID, BookingDate, CheckIn, CheckOut, RangeOfDays, TotalCost, [Status], [Description])
     VALUES (@EmployeeID, @RoomID, @BookingDate, @CheckIn, @CheckOut, @RangeOfDays, @TotalCost, @Status, @Description);
+
+	SET @BookingId = SCOPE_IDENTITY();
 END
 GO
 --==========================================
@@ -244,6 +265,17 @@ CREATE PROCEDURE DeleteBooking
 AS
 BEGIN
     DELETE FROM Bookings WHERE BookingID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE SaveCustomerBooking
+	@BookingID int,
+	@CustomerID int
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.BookingCustomers(BookingID, CustomerID)
+    VALUES (@BookingID, @CustomerID);
 END
 GO
 --==========================================

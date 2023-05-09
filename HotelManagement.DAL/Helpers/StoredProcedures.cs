@@ -32,5 +32,11 @@ namespace HotelManagement.DAL.Helpers
         public const string CreateBooking = "CreateBooking";
         public const string UpdateBooking = "UpdateBooking";
         public const string DeleteBooking = "DeleteBooking";
+        public const string CreateVisitor = "CreateVisitor";
+
+
+        public const string SaveCustomerBooking = "SaveCustomerBooking";
+
+
     }
 }

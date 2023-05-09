@@ -38,7 +38,7 @@ namespace HotelManagement.DAL
             return bookings;
         }
 
-        public static void RegisterBooking(int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkOut, int rangeOfDays, decimal totalCost, string status, string description)
+        public static int RegisterBooking(int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkOut, int rangeOfDays, decimal totalCost, string status, string description)
         {
             var parameters = new[]
                {
@@ -50,10 +50,15 @@ namespace HotelManagement.DAL
                     new SqlParameter("@RangeOfDays", SqlDbType.Int) { Value = rangeOfDays },
                     new SqlParameter("@TotalCost", SqlDbType.Decimal) { Value = totalCost },
                     new SqlParameter("@Status", SqlDbType.VarChar) { Value = status },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = description }
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = description },
+                    new SqlParameter("@BookingId", SqlDbType.Int) { Direction = ParameterDirection.Output }
                 };
 
             var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateBooking, parameters);
+
+            int bookingId = Convert.ToInt32(parameters[parameters.Length - 1].Value);
+
+            return bookingId;
         }
 
         public static void UpdateBooking(int id, int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkOut, int rangeOfDays, decimal totalCost, string status, string description)

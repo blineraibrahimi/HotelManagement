@@ -34,5 +34,26 @@ namespace HotelManagement.DAL
 
             return customers;
         }
+
+        public static int SaveCustomerToDB(string cusName, string cusLastname, string cusAddress, string cuzContatctNo,
+            string cusIdNo, string cusDescription)
+        {
+            var parameters = new[]
+               {
+                    new SqlParameter("@CustomerName", SqlDbType.VarChar) { Value = cusName},
+                    new SqlParameter("@CustomerLastname", SqlDbType.VarChar) { Value = cusLastname },
+                    new SqlParameter("@Address", SqlDbType.VarChar) { Value = cusAddress},
+                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = cuzContatctNo },
+                    new SqlParameter("@CustomerIDNo", SqlDbType.VarChar) { Value = cusIdNo },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = cusDescription },
+                    new SqlParameter("@VisitorId", SqlDbType.Int) { Direction = ParameterDirection.Output }
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateVisitor, parameters);
+
+            int visitorId = Convert.ToInt32(parameters[parameters.Length - 1].Value);
+
+            return visitorId;
+        }
     }
 }

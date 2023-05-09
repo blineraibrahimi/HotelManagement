@@ -2,6 +2,10 @@
 using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Dynamic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +15,41 @@ namespace HotelManagement.BLL
 {
     public static class BookingBLL
     {
+        public static DataTable visitorTabletest = new DataTable();
+        public static DataTable CreateTable(DataTable visitorTable)
+        {
+            // Create a new DataTable to hold the visitor data
+            visitorTable = new DataTable();
+
+            // Add columns to the DataTable for the visitor data\
+            visitorTable.Columns.Add("Firstname", typeof(string));
+            visitorTable.Columns.Add("Lastame", typeof(string));
+            visitorTable.Columns.Add("Address", typeof(string));
+            visitorTable.Columns.Add("Contact Number", typeof(string));
+            visitorTable.Columns.Add("Identification Number", typeof(string));
+            visitorTable.Columns.Add("Description", typeof(string));
+            
+            visitorTabletest = visitorTable;
+
+            return visitorTable;
+        }
+
+        public static DataTable AddRowToTable(string firstname,string lastname, string address, string contactNo, string idNo, string descriprion)
+        {
+            DataRow newRow = visitorTabletest.NewRow();
+
+            newRow["Firstname"] = firstname;
+            newRow["Lastame"] = lastname;
+            newRow["Address"] = address;
+            newRow["Contact Number"] = contactNo;
+            newRow["Identification Number"] = idNo;
+            newRow["Description"] = descriprion;
+
+            visitorTabletest.Rows.Add(newRow);
+
+            return visitorTabletest;
+        }
+
         public static object LoadData()
         {
             var bookings = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetBookings, null).ToBookingList();
@@ -45,15 +84,15 @@ namespace HotelManagement.BLL
         //    }
         //}
 
-        public static bool RegisterBooking(int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkout, int rangeOfDays, decimal totalCost, string status, string description)
+        public static int RegisterBooking(int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkout, int rangeOfDays, decimal totalCost, string status, string description)
         {
             if (empId == 0 || roomId == 0 || string.IsNullOrEmpty(status) || string.IsNullOrEmpty(description))
             {
-                return false;
+                return 0;
             }
 
-            DABookings.RegisterBooking(empId, roomId, bookingDate, checkIn, checkout, rangeOfDays, totalCost, status, description);
-            return true;
+            int bookingId = DABookings.RegisterBooking(empId, roomId, bookingDate, checkIn, checkout, rangeOfDays, totalCost, status, description);
+            return bookingId;
         }
 
         public static bool UpdateBooking(int id, int empId, int roomId, DateTime bookingDate, DateTime checkIn, DateTime checkout, int rangeOfDays, decimal totalCost, string status, string description)

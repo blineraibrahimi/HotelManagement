@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DAL;
 
 namespace HotelManagement.Customers
 {
@@ -29,17 +30,10 @@ namespace HotelManagement.Customers
                 return;
             }
 
-            var parameters = new[]
-                {
-                    new SqlParameter("@CustomerName", SqlDbType.VarChar) { Value = txtCusName.Text },
-                    new SqlParameter("@CustomerLastname", SqlDbType.VarChar) { Value = txtCusLastName.Text },
-                    new SqlParameter("@Address", SqlDbType.VarChar) { Value = txtCusAddress.Text },
-                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = txtCusContactNo.Text },
-                    new SqlParameter("@CustomerIDNo", SqlDbType.VarChar) { Value = txtCusIDNo.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtCusDsscription.Text },
-                };
 
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateCustomer, parameters);
+            //convert to bll
+            DACustomers.SaveCustomerToDB(txtCusName.Text, txtCusLastName.Text, txtCusAddress.Text, txtCusContactNo.Text, txtCusIDNo.Text, txtCusDsscription.Text);
+
 
             MessageBox.Show("Customer Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);    
 
