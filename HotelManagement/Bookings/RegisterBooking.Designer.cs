@@ -47,9 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.visitorDVG = new System.Windows.Forms.DataGridView();
             this.createNewVisitorbtn = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.visitorDVG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,13 +219,6 @@
             this.label4.TabIndex = 88;
             this.label4.Text = "Status";
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(207, 465);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(242, 22);
-            this.txtStatus.TabIndex = 87;
-            // 
             // visitorDVG
             // 
             this.visitorDVG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -246,16 +239,30 @@
             this.createNewVisitorbtn.UseVisualStyleBackColor = true;
             this.createNewVisitorbtn.Click += new System.EventHandler(this.createNewVisitorbtn_Click);
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DisplayMember = "ID";
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Confirmed",
+            "Cancelled"});
+            this.cmbStatus.Location = new System.Drawing.Point(208, 465);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(241, 24);
+            this.cmbStatus.TabIndex = 103;
+            this.cmbStatus.ValueMember = "ID";
+            // 
             // RegisterBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1104, 611);
+            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.createNewVisitorbtn);
             this.Controls.Add(this.visitorDVG);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTotalCost);
             this.Controls.Add(this.checkOutDatePicker);
@@ -305,8 +312,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotalCost;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.DataGridView visitorDVG;
         private System.Windows.Forms.Button createNewVisitorbtn;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

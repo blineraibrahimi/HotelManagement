@@ -39,6 +39,7 @@ namespace HotelManagement.HouseKeeping
             var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
             employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
             cmbEmployee.DataSource = employees;
+
             foreach (BO.HouseKeeping obj in houseKeepingData)
             {
                 ID = obj.ID;

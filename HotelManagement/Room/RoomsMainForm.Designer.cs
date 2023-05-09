@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomsMainForm));
             this.roomsDataGridView = new System.Windows.Forms.DataGridView();
-            this.createNewbtn = new System.Windows.Forms.Button();
-            this.deletebtn = new System.Windows.Forms.Button();
-            this.updatebtn = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +39,11 @@
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createNewbtn = new System.Windows.Forms.Button();
+            this.deletebtn = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,121 +61,110 @@
             this.statusDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
             this.roomsDataGridView.DataSource = this.roomBindingSource;
-            this.roomsDataGridView.Location = new System.Drawing.Point(12, 139);
+            resources.ApplyResources(this.roomsDataGridView, "roomsDataGridView");
             this.roomsDataGridView.Name = "roomsDataGridView";
-            this.roomsDataGridView.RowHeadersWidth = 51;
             this.roomsDataGridView.RowTemplate.Height = 24;
-            this.roomsDataGridView.Size = new System.Drawing.Size(934, 253);
-            this.roomsDataGridView.TabIndex = 0;
             this.roomsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.roomsDataGridView_RowHeaderMouseClick);
-            // 
-            // createNewbtn
-            // 
-            this.createNewbtn.Location = new System.Drawing.Point(728, 78);
-            this.createNewbtn.Name = "createNewbtn";
-            this.createNewbtn.Size = new System.Drawing.Size(172, 31);
-            this.createNewbtn.TabIndex = 2;
-            this.createNewbtn.Text = "Create New";
-            this.createNewbtn.UseVisualStyleBackColor = true;
-            this.createNewbtn.Click += new System.EventHandler(this.createNewbtn_Click);
-            // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(728, 410);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(172, 31);
-            this.deletebtn.TabIndex = 5;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
-            // updatebtn
-            // 
-            this.updatebtn.Location = new System.Drawing.Point(539, 410);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(172, 31);
-            this.updatebtn.TabIndex = 4;
-            this.updatebtn.Text = "Update";
-            this.updatebtn.UseVisualStyleBackColor = true;
-            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.iDDataGridViewTextBoxColumn, "iDDataGridViewTextBoxColumn");
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomNameDataGridViewTextBoxColumn
             // 
             this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "RoomName";
-            this.roomNameDataGridViewTextBoxColumn.HeaderText = "Room name";
-            this.roomNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.roomNameDataGridViewTextBoxColumn, "roomNameDataGridViewTextBoxColumn");
             this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
-            this.roomNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomNumberDataGridViewTextBoxColumn
             // 
             this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
-            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "Room number";
-            this.roomNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.roomNumberDataGridViewTextBoxColumn, "roomNumberDataGridViewTextBoxColumn");
             this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
-            this.roomNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // capacityDataGridViewTextBoxColumn
             // 
             this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.capacityDataGridViewTextBoxColumn, "capacityDataGridViewTextBoxColumn");
             this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.Width = 125;
             // 
             // rateDataGridViewTextBoxColumn
             // 
             this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
-            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate";
-            this.rateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.rateDataGridViewTextBoxColumn, "rateDataGridViewTextBoxColumn");
             this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
-            this.rateDataGridViewTextBoxColumn.Width = 125;
             // 
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.statusDataGridViewTextBoxColumn, "statusDataGridViewTextBoxColumn");
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomBindingSource
             // 
             this.roomBindingSource.DataSource = typeof(HotelManagement.BO.Room);
             // 
+            // createNewbtn
+            // 
+            resources.ApplyResources(this.createNewbtn, "createNewbtn");
+            this.createNewbtn.Name = "createNewbtn";
+            this.createNewbtn.UseVisualStyleBackColor = true;
+            this.createNewbtn.Click += new System.EventHandler(this.createNewbtn_Click);
+            // 
+            // deletebtn
+            // 
+            resources.ApplyResources(this.deletebtn, "deletebtn");
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // updatebtn
+            // 
+            resources.ApplyResources(this.updatebtn, "updatebtn");
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // RoomsMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(959, 462);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.createNewbtn);
             this.Controls.Add(this.roomsDataGridView);
             this.Name = "RoomsMainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rooms";
             this.Load += new System.EventHandler(this.RoomsMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,5 +182,7 @@
         private System.Windows.Forms.Button createNewbtn;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

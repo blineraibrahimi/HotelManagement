@@ -13,6 +13,7 @@ using HotelManagement.DAL;
 using System.Data.SqlClient;
 using System.Xml.Linq;
 using HotelManagement.BLL;
+using System.Threading;
 
 namespace HotelManagement.Employees
 {
@@ -83,6 +84,24 @@ namespace HotelManagement.Employees
             }
             employeesBindingSource.DataSource = EmployeesBLL.LoadData();
             selectedRows.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("sq");
+                    break;
+            }
+
+            this.Controls.Clear();
+            InitializeComponent();
+
+            employeesBindingSource.DataSource = EmployeesBLL.LoadData();
         }
     }
 }

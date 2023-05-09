@@ -49,7 +49,7 @@ namespace HotelManagement.Bookings
 
             var bookingID = BookingBLL.RegisterBooking(selectedEmployee.ID, roomId, bookingDatePicker.Value,
                 checkInDatePicker.Value, checkOutDatePicker.Value, Convert.ToInt32(txtRangeOfDays.Text), Convert.ToDecimal(txtTotalCost.Text),
-                txtStatus.Text, txtDescription.Text);
+                cmbStatus.SelectedItem.ToString(), txtDescription.Text);
 
             foreach (DataGridViewRow row in visitorDVG.Rows)
             {

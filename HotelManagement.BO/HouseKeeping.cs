@@ -8,10 +8,12 @@ namespace HotelManagement.BO
 {
     public class HouseKeeping : BaseClass
     {
-        public int  EmployeeID { get; set; }
-        public Employees Employee { get; set; }
         public int RoomID { get; set; }
+        public string RoomName { get; set; }
         public Room Room { get; set; }
+        public int EmployeeID { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeLastName { get; set; }
         public DateTime HousekeepingDate { get; set; }
         public string HousekeepingStatus { get; set; }
         public string Description { get; set; }

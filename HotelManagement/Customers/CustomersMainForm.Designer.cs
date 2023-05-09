@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersMainForm));
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,8 @@
             this.createNewbtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,69 +61,52 @@
             this.customerIDNoDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
             this.customerDataGridView.DataSource = this.customersBindingSource;
-            this.customerDataGridView.Location = new System.Drawing.Point(13, 122);
+            resources.ApplyResources(this.customerDataGridView, "customerDataGridView");
             this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.RowHeadersWidth = 51;
             this.customerDataGridView.RowTemplate.Height = 24;
-            this.customerDataGridView.Size = new System.Drawing.Size(939, 290);
-            this.customerDataGridView.TabIndex = 0;
             this.customerDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.customerDataGridView_RowHeaderMouseClick);
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.iDDataGridViewTextBoxColumn, "iDDataGridViewTextBoxColumn");
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
             this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "First name";
-            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.customerNameDataGridViewTextBoxColumn, "customerNameDataGridViewTextBoxColumn");
             this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerLastnameDataGridViewTextBoxColumn
             // 
             this.customerLastnameDataGridViewTextBoxColumn.DataPropertyName = "CustomerLastname";
-            this.customerLastnameDataGridViewTextBoxColumn.HeaderText = "Last name";
-            this.customerLastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.customerLastnameDataGridViewTextBoxColumn, "customerLastnameDataGridViewTextBoxColumn");
             this.customerLastnameDataGridViewTextBoxColumn.Name = "customerLastnameDataGridViewTextBoxColumn";
-            this.customerLastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.addressDataGridViewTextBoxColumn, "addressDataGridViewTextBoxColumn");
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 125;
             // 
             // contactNoDataGridViewTextBoxColumn
             // 
             this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact number";
-            this.contactNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.contactNoDataGridViewTextBoxColumn, "contactNoDataGridViewTextBoxColumn");
             this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerIDNoDataGridViewTextBoxColumn
             // 
             this.customerIDNoDataGridViewTextBoxColumn.DataPropertyName = "CustomerIDNo";
-            this.customerIDNoDataGridViewTextBoxColumn.HeaderText = "Identification No";
-            this.customerIDNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.customerIDNoDataGridViewTextBoxColumn, "customerIDNoDataGridViewTextBoxColumn");
             this.customerIDNoDataGridViewTextBoxColumn.Name = "customerIDNoDataGridViewTextBoxColumn";
-            this.customerIDNoDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // customersBindingSource
             // 
@@ -128,51 +114,57 @@
             // 
             // createNewbtn
             // 
-            this.createNewbtn.Location = new System.Drawing.Point(734, 64);
+            resources.ApplyResources(this.createNewbtn, "createNewbtn");
             this.createNewbtn.Name = "createNewbtn";
-            this.createNewbtn.Size = new System.Drawing.Size(172, 31);
-            this.createNewbtn.TabIndex = 2;
-            this.createNewbtn.Text = "Create New";
             this.createNewbtn.UseVisualStyleBackColor = true;
             this.createNewbtn.Click += new System.EventHandler(this.createNewbtn_Click);
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(734, 432);
+            resources.ApplyResources(this.deletebtn, "deletebtn");
             this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(172, 31);
-            this.deletebtn.TabIndex = 5;
-            this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = true;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(545, 432);
+            resources.ApplyResources(this.updatebtn, "updatebtn");
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(172, 31);
-            this.updatebtn.TabIndex = 4;
-            this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // CustomersMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(964, 486);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.createNewbtn);
             this.Controls.Add(this.customerDataGridView);
             this.Name = "CustomersMainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customers";
             this.Load += new System.EventHandler(this.CustomersMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,5 +182,7 @@
         private System.Windows.Forms.Button createNewbtn;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

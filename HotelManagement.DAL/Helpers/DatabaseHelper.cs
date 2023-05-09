@@ -19,21 +19,28 @@ namespace HotelManagement.DAL.Helpers
 
         public static DataTable ExecuteStoredProcedure(string storedProcedureName, SqlParameter[] parameters = null)
         {
-            using (var connection = GetSQLConnection())
+            try
             {
-                using (var command = new SqlCommand(storedProcedureName, connection))
+                using (var connection = GetSQLConnection())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    if (parameters != null)
+                    using (var command = new SqlCommand(storedProcedureName, connection))
                     {
-                        command.Parameters.AddRange(parameters);
-                    }
+                        command.CommandType = CommandType.StoredProcedure;
+                        if (parameters != null)
+                        {
+                            command.Parameters.AddRange(parameters);
+                        }
 
-                    var adapter = new SqlDataAdapter(command);
-                    var table = new DataTable();
-                    adapter.Fill(table);
-                    return table;
+                        var adapter = new SqlDataAdapter(command);
+                        var table = new DataTable();
+                        adapter.Fill(table);
+                        return table;
+                    }
                 }
+            }
+            catch (Exception er)
+            {
+                throw er;
             }
         }
     }

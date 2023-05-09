@@ -29,51 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseKeepingMain));
             this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.createNewbtn = new System.Windows.Forms.Button();
             this.HouseKeepingDataGridView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.housekeepingDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.housekeepingStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.houseKeepingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.HouseKeepingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.houseKeepingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(599, 306);
-            this.deletebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.deletebtn, "deletebtn");
             this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(172, 31);
-            this.deletebtn.TabIndex = 9;
-            this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = true;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(411, 306);
-            this.updatebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.updatebtn, "updatebtn");
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(172, 31);
-            this.updatebtn.TabIndex = 8;
-            this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // createNewbtn
             // 
-            this.createNewbtn.Location = new System.Drawing.Point(599, 34);
-            this.createNewbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.createNewbtn, "createNewbtn");
             this.createNewbtn.Name = "createNewbtn";
-            this.createNewbtn.Size = new System.Drawing.Size(172, 31);
-            this.createNewbtn.TabIndex = 7;
-            this.createNewbtn.Text = "Create New";
             this.createNewbtn.UseVisualStyleBackColor = true;
             this.createNewbtn.Click += new System.EventHandler(this.createNewbtn_Click);
             // 
@@ -83,90 +75,95 @@
             this.HouseKeepingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.HouseKeepingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
-            this.employeeIDDataGridViewTextBoxColumn,
-            this.roomIDDataGridViewTextBoxColumn,
+            this.EmployeeName,
+            this.EmployeeLastName,
+            this.RoomName,
             this.housekeepingDateDataGridViewTextBoxColumn,
             this.housekeepingStatusDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
             this.HouseKeepingDataGridView.DataSource = this.houseKeepingBindingSource;
-            this.HouseKeepingDataGridView.Location = new System.Drawing.Point(16, 96);
-            this.HouseKeepingDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            resources.ApplyResources(this.HouseKeepingDataGridView, "HouseKeepingDataGridView");
             this.HouseKeepingDataGridView.Name = "HouseKeepingDataGridView";
-            this.HouseKeepingDataGridView.RowHeadersWidth = 51;
-            this.HouseKeepingDataGridView.Size = new System.Drawing.Size(805, 185);
-            this.HouseKeepingDataGridView.TabIndex = 10;
             this.HouseKeepingDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.HouseKeepingDataGridView_RowHeaderMouseClick);
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.iDDataGridViewTextBoxColumn, "iDDataGridViewTextBoxColumn");
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // employeeIDDataGridViewTextBoxColumn
+            // EmployeeName
             // 
-            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
-            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
-            this.employeeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            this.employeeIDDataGridViewTextBoxColumn.Width = 125;
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            resources.ApplyResources(this.EmployeeName, "EmployeeName");
+            this.EmployeeName.Name = "EmployeeName";
             // 
-            // roomIDDataGridViewTextBoxColumn
+            // EmployeeLastName
             // 
-            this.roomIDDataGridViewTextBoxColumn.DataPropertyName = "RoomID";
-            this.roomIDDataGridViewTextBoxColumn.HeaderText = "RoomID";
-            this.roomIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roomIDDataGridViewTextBoxColumn.Name = "roomIDDataGridViewTextBoxColumn";
-            this.roomIDDataGridViewTextBoxColumn.Width = 125;
+            this.EmployeeLastName.DataPropertyName = "EmployeeLastName";
+            resources.ApplyResources(this.EmployeeLastName, "EmployeeLastName");
+            this.EmployeeLastName.Name = "EmployeeLastName";
+            // 
+            // RoomName
+            // 
+            this.RoomName.DataPropertyName = "RoomName";
+            resources.ApplyResources(this.RoomName, "RoomName");
+            this.RoomName.Name = "RoomName";
             // 
             // housekeepingDateDataGridViewTextBoxColumn
             // 
             this.housekeepingDateDataGridViewTextBoxColumn.DataPropertyName = "HousekeepingDate";
-            this.housekeepingDateDataGridViewTextBoxColumn.HeaderText = "HousekeepingDate";
-            this.housekeepingDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.housekeepingDateDataGridViewTextBoxColumn, "housekeepingDateDataGridViewTextBoxColumn");
             this.housekeepingDateDataGridViewTextBoxColumn.Name = "housekeepingDateDataGridViewTextBoxColumn";
-            this.housekeepingDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // housekeepingStatusDataGridViewTextBoxColumn
             // 
             this.housekeepingStatusDataGridViewTextBoxColumn.DataPropertyName = "HousekeepingStatus";
-            this.housekeepingStatusDataGridViewTextBoxColumn.HeaderText = "HousekeepingStatus";
-            this.housekeepingStatusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.housekeepingStatusDataGridViewTextBoxColumn, "housekeepingStatusDataGridViewTextBoxColumn");
             this.housekeepingStatusDataGridViewTextBoxColumn.Name = "housekeepingStatusDataGridViewTextBoxColumn";
-            this.housekeepingStatusDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // houseKeepingBindingSource
             // 
             this.houseKeepingBindingSource.DataSource = typeof(HotelManagement.BO.HouseKeeping);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // HouseKeepingMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(836, 364);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.HouseKeepingDataGridView);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.createNewbtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HouseKeepingMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HouseKeeping";
             this.Load += new System.EventHandler(this.HouseKeepingMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HouseKeepingDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.houseKeepingBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,12 +172,15 @@
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.Button createNewbtn;
         private System.Windows.Forms.DataGridView HouseKeepingDataGridView;
+        private System.Windows.Forms.BindingSource houseKeepingBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomName;
         private System.Windows.Forms.DataGridViewTextBoxColumn housekeepingDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn housekeepingStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource houseKeepingBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

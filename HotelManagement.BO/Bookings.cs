@@ -9,8 +9,11 @@ namespace HotelManagement.BO
     public class Bookings : BaseClass
     {
         public int RoomID { get; set; }
+        public string RoomName { get; set; }
         public Room Room { get; set; }
         public int EmployeeID { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeLastName { get; set; }
         public Employees Employee { get; set; }
         public DateTime BookingDate { get; set; }
         public DateTime CheckIn { get; set; }

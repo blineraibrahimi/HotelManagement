@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BLL;
+using System.Threading;
 
 namespace HotelManagement.Bookings
 {
@@ -81,6 +82,24 @@ namespace HotelManagement.Bookings
                 MessageBox.Show("Please Select Record to Delete");
             }
             selectedRows.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("sq-AL");
+                    break;
+            }
+
+            this.Controls.Clear();
+            InitializeComponent();
+
+            bookingsBindingSource.DataSource = BookingBLL.LoadData();
         }
     }
 }

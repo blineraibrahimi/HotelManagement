@@ -168,7 +168,9 @@ GO
 CREATE PROCEDURE GetHouseKeeping
 AS
 BEGIN
-	SELECT HousekeepingID, EmployeeID, RoomID, HousekeepingDate, HousekeppingStatus, [Description] FROM  HotelManagementDB.dbo.HouseKeeping
+	SELECT h.HousekeepingID, e.EmployeeName, e.EmployeeLastname, r.RoomName, h.HousekeepingDate, h.HousekeppingStatus, h.[Description] FROM HouseKeeping h
+	Join Employees e ON h.EmployeeID = e.EmployeeID
+	Join Rooms r ON h.RoomID = r.RoomID
 END
 GO
 --==========================================
@@ -214,7 +216,9 @@ GO
 CREATE PROCEDURE GetBookings
 AS
 BEGIN
-	SELECT BookingID, EmployeeID, RoomID, BookingDate, CheckIn, CheckOut, RangeOfDays, TotalCost, [Status], [Description] FROM  HotelManagementDB.dbo.Bookings
+	SELECT b.BookingID, e.EmployeeName, e.EmployeeLastname, r.RoomName, b.BookingDate, b.CheckIn, b.CheckOut, b.RangeOfDays, b.TotalCost, b.[Status], b.[Description] FROM Bookings b
+	Join Employees e ON b.EmployeeID = e.EmployeeID
+	Join Rooms r ON b.RoomID = r.RoomID
 END
 GO
 --==========================================

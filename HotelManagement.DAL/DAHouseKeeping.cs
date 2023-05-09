@@ -21,8 +21,11 @@ namespace HotelManagement.DAL
                 var housekeeping = new HouseKeeping
                 {
                     ID = Convert.ToInt32(row["HouseKeepingID"]),
-                    EmployeeID = Convert.ToInt32(row["EmployeeID"]),
-                    RoomID = Convert.ToInt32(row["RoomID"]),
+                    RoomName = Convert.ToString(row["RoomName"]),
+                    EmployeeName = Convert.ToString(row["EmployeeName"]),
+                    EmployeeLastName = Convert.ToString(row["EmployeeLastName"]),
+                    //EmployeeID = Convert.ToInt32(row["EmployeeID"]),
+                    //RoomID = Convert.ToInt32(row["RoomID"]),
                     HousekeepingDate = Convert.ToDateTime(row["HouseKeepingDate"]),
                     HousekeepingStatus = Convert.ToString(row["HousekeppingStatus"]),
                     Description = Convert.ToString(row["Description"])
