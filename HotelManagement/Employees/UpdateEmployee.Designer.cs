@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateEmployee));
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmpDescription = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -232,6 +233,7 @@
             this.Controls.Add(this.txtEmpLastName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmpName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Employee";
