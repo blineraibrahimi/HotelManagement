@@ -1,4 +1,5 @@
-﻿using HotelManagement.Bookings;
+﻿using HotelManagement.BLL;
+using HotelManagement.Bookings;
 using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using HotelManagement.HouseKeeping;
@@ -27,7 +28,7 @@ namespace HotelManagement
         List<BO.HouseKeeping> selectedRows = new List<BO.HouseKeeping>();
         private void HouseKeepingMain_Load(object sender, EventArgs e)
         {
-            LoadData();
+            houseKeepingBindingSource.DataSource = HouseKeepingBLL.LoadData();
         }
 
         private void HouseKeepingDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -43,11 +44,11 @@ namespace HotelManagement
 
         private void createNewbtn_Click(object sender, EventArgs e)
         {
-            using(var registerHouseKeeping = new RegisterHouseKeeping())
+            using (var registerHouseKeeping = new RegisterHouseKeeping())
             {
                 registerHouseKeeping.ShowDialog();
             }
-            LoadData();
+            houseKeepingBindingSource.DataSource = HouseKeepingBLL.LoadData();
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
@@ -65,34 +66,23 @@ namespace HotelManagement
                     MessageBox.Show("Please Select Record to Update");
                 }
             }
-            LoadData();
+            houseKeepingBindingSource.DataSource = HouseKeepingBLL.LoadData();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = HouseKeepingBLL.DeleteHouseKeeping(ID);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteHouseKeeping, parameters);
-
                 MessageBox.Show("Record Deleted Successfully!");
-                LoadData();
+                houseKeepingBindingSource.DataSource = HouseKeepingBLL.LoadData();
             }
             else
             {
                 MessageBox.Show("Please Select Record to Delete");
             }
             selectedRows.Clear();
-        }
-
-        public void LoadData()
-        {
-            var HouseKeeping = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetHouseKeeping, null).ToHouseKeepingList();
-            houseKeepingBindingSource.DataSource = HouseKeeping;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,7 +100,8 @@ namespace HotelManagement
             this.Controls.Clear();
             InitializeComponent();
 
-            LoadData();
+            houseKeepingBindingSource.DataSource = HouseKeepingBLL.LoadData();
+
         }
     }
 }

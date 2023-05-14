@@ -36,5 +36,45 @@ namespace HotelManagement.DAL
 
             return housekeepings;
         }
+
+        public static void SaveHousekeeping(int empID, int roomID, DateTime housekeepingDate, string housekeepingStatus, string desciption)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = empID},
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomID },
+                    new SqlParameter("@HousekeepingDate", SqlDbType.DateTime) { Value = housekeepingDate },
+                    new SqlParameter("@HousekeppingStatus", SqlDbType.VarChar) { Value = housekeepingStatus },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = desciption },
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateHouseKeeping, parameters);
+        }
+
+        public static void UpdateHousekeeping(int id, int empID, int roomID, DateTime housekeepingDate, string housekeepingStatus, string desciption)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@Id", SqlDbType.Int) { Value = id },
+                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = empID},
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomID },
+                    new SqlParameter("@HousekeepingDate", SqlDbType.DateTime) { Value = housekeepingDate },
+                    new SqlParameter("@HousekeppingStatus", SqlDbType.VarChar) { Value = housekeepingStatus },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = desciption },
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateHouseKeeping, parameters);
+
+        }
+
+        public static void DeleteHouseKeeping(int id)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+            };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteHouseKeeping, parameters);
+        }
     }
 }

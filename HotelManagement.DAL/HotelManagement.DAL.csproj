@@ -57,5 +57,8 @@
       <Name>HotelManagement.BO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Helpers\HotelManagement.BO.HouseKeeping.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,6 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.BLL;
+using HotelManagement.BO;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using HotelManagement.Employees;
 using System;
@@ -24,7 +26,7 @@ namespace HotelManagement.Room
 
         private void RoomsMainForm_Load(object sender, EventArgs e)
         {
-            LoadData();
+            roomBindingSource.DataSource = RoomsBLL.LoadData();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace HotelManagement.Room
             {
                 registerRoomForm.ShowDialog();
             }
-            LoadData();
+            roomBindingSource.DataSource = RoomsBLL.LoadData();
         }
 
         private int ID;
@@ -57,42 +59,30 @@ namespace HotelManagement.Room
                 {
                     updateRoomForm.roomData = selectedRows;
                     updateRoomForm.ShowDialog();
-                    selectedRows.Clear();
                 }
                 else
                 {
                     MessageBox.Show("Please Select Record to Update");
                 }
             }
-            LoadData();
+            selectedRows.Clear();
+            roomBindingSource.DataSource = RoomsBLL.LoadData();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = RoomsBLL.DeleteRoom(ID);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteRoom, parameters);
-
                 MessageBox.Show("Record Deleted Successfully!");
-                LoadData();
+                roomBindingSource.DataSource = RoomsBLL.LoadData();
             }
             else
             {
                 MessageBox.Show("Please Select Record to Delete");
             }
             selectedRows.Clear();
-        }
-
-        //---------------------------------------------------------------------
-        public void LoadData()
-        {
-            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
-            roomBindingSource.DataSource = rooms;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,7 +100,7 @@ namespace HotelManagement.Room
             this.Controls.Clear();
             InitializeComponent();
 
-            LoadData();
+            roomBindingSource.DataSource = RoomsBLL.LoadData();
         }
     }
 }

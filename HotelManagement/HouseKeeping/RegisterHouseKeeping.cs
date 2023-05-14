@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.BLL;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
@@ -28,26 +29,15 @@ namespace HotelManagement.HouseKeeping
 
         private void hsRegisterbtn_Click(object sender, EventArgs e)
         {
-            if (cmbEmployee.SelectedIndex == 0 || cmbRoom.SelectedIndex == 0 ||
-               string.IsNullOrWhiteSpace(txtRoomStatus.Text) || string.IsNullOrWhiteSpace(txtDescription.Text))
+            var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
+            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
+
+            var message = HouseKeepingBLL.RegisterHouseKeeping(selectedEmployee.ID, selectedRoom.ID, houseKeepingDatePicker.Value, txtRoomStatus.Text, txtDescription.Text);
+            if (message is false)
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
-            var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
-
-            var parameters = new[]
-                {
-                    new SqlParameter("@EmployeeID", SqlDbType.Int) { Value = selectedEmployee.ID },
-                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = selectedRoom.ID },
-                    new SqlParameter("@HousekeepingDate", SqlDbType.DateTime) { Value = houseKeepingDatePicker.Value },
-                    new SqlParameter("@HousekeppingStatus", SqlDbType.VarChar) { Value = txtRoomStatus.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtDescription.Text },
-                };
-
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateHouseKeeping, parameters);
 
             MessageBox.Show("Housekeeping Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -56,13 +46,8 @@ namespace HotelManagement.HouseKeeping
 
         private void RegisterHouseKeeping_Load(object sender, EventArgs e)
         {
-            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
-            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
-            cmbRoom.DataSource = rooms;
-
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetEmployees, null).ToEmployeesList();
-            employees.Insert(0, new BO.Employees { ID = 0, EmployeeName = "Select an employee" });
-            cmbEmployee.DataSource = employees;
+            cmbRoom.DataSource = HouseKeepingBLL.LoadRooms();
+            cmbEmployee.DataSource = HouseKeepingBLL.LoadEmployee();
         }
     }
 }

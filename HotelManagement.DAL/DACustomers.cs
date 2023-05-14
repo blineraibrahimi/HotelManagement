@@ -35,7 +35,7 @@ namespace HotelManagement.DAL
             return customers;
         }
 
-        public static int SaveCustomerToDB(string cusName, string cusLastname, string cusAddress, string cuzContatctNo,
+        public static int SaveCustomerToDB(string cusName, string cusLastname, string cusAddress, string cusContatctNo,
             string cusIdNo, string cusDescription)
         {
             var parameters = new[]
@@ -43,7 +43,7 @@ namespace HotelManagement.DAL
                     new SqlParameter("@CustomerName", SqlDbType.VarChar) { Value = cusName},
                     new SqlParameter("@CustomerLastname", SqlDbType.VarChar) { Value = cusLastname },
                     new SqlParameter("@Address", SqlDbType.VarChar) { Value = cusAddress},
-                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = cuzContatctNo },
+                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = cusContatctNo },
                     new SqlParameter("@CustomerIDNo", SqlDbType.VarChar) { Value = cusIdNo },
                     new SqlParameter("@Description", SqlDbType.VarChar) { Value = cusDescription },
                     new SqlParameter("@VisitorId", SqlDbType.Int) { Direction = ParameterDirection.Output }
@@ -54,6 +54,33 @@ namespace HotelManagement.DAL
             int visitorId = Convert.ToInt32(parameters[parameters.Length - 1].Value);
 
             return visitorId;
+        }
+
+        public static void UpdateCustomer(int id, string cusName, string cusLastname, string cusAddress, string cusContatctNo,
+            string cusIdNo, string cusDescription)
+        {
+            var parameters = new[]
+               {
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id },
+                    new SqlParameter("@CustomerName", SqlDbType.VarChar) { Value = cusName },
+                    new SqlParameter("@CustomerLastname", SqlDbType.VarChar) { Value = cusLastname },
+                    new SqlParameter("@Address", SqlDbType.VarChar) { Value = cusAddress },
+                    new SqlParameter("@ContactNo", SqlDbType.VarChar) { Value = cusContatctNo},
+                    new SqlParameter("@CustomerIDNo", SqlDbType.VarChar) { Value = cusContatctNo },
+                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = cusDescription },
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateCustomer, parameters);
+        }
+
+        public static void DeleteCustomer(int id)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+            };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
         }
     }
 }

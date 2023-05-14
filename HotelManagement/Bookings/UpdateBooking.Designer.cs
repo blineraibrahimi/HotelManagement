@@ -1,4 +1,6 @@
-﻿namespace HotelManagement.Bookings
+﻿using System;
+
+namespace HotelManagement.Bookings
 {
     partial class UpdateBooking
     {
@@ -90,7 +92,7 @@
             this.checkOutDatePicker.Name = "checkOutDatePicker";
             this.checkOutDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkOutDatePicker.TabIndex = 104;
-            this.checkOutDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            this.checkOutDatePicker.Value = DateTime.Now;
             this.checkOutDatePicker.ValueChanged += new System.EventHandler(this.checkOutDatePicker_ValueChanged);
             // 
             // label2
@@ -108,7 +110,7 @@
             this.checkInDatePicker.Name = "checkInDatePicker";
             this.checkInDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkInDatePicker.TabIndex = 102;
-            this.checkInDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            this.checkInDatePicker.Value = DateTime.Now;
             // 
             // label1
             // 
@@ -144,7 +146,7 @@
             this.bookingDatePicker.Name = "bookingDatePicker";
             this.bookingDatePicker.Size = new System.Drawing.Size(241, 22);
             this.bookingDatePicker.TabIndex = 98;
-            this.bookingDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            this.bookingDatePicker.Value = DateTime.Now;
             // 
             // label7
             // 

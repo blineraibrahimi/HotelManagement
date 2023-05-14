@@ -47,7 +47,8 @@ namespace HotelManagement.Employees
 
             if (message is true)
             {
-                MessageBox.Show("Record Updated Successfully!");
+                MessageBox.Show("Record Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 this.Close();
             }
             else

@@ -1,4 +1,6 @@
-﻿namespace HotelManagement.HouseKeeping
+﻿using System;
+
+namespace HotelManagement.HouseKeeping
 {
     partial class UpdateHouseKeeping
     {
@@ -68,7 +70,7 @@
             this.houseKeepingDatePicker.Name = "houseKeepingDatePicker";
             this.houseKeepingDatePicker.Size = new System.Drawing.Size(241, 22);
             this.houseKeepingDatePicker.TabIndex = 84;
-            this.houseKeepingDatePicker.Value = new System.DateTime(2023, 4, 17, 17, 39, 6, 0);
+            this.houseKeepingDatePicker.Value = DateTime.Now;
             // 
             // label9
             // 

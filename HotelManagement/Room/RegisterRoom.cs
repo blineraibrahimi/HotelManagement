@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL.Helpers;
+﻿using HotelManagement.BLL;
+using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,25 +22,13 @@ namespace HotelManagement.Room
 
         private void roomRegisterbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtRoomName.Text) || string.IsNullOrWhiteSpace(txtRoomNo.Text) ||
-                string.IsNullOrWhiteSpace(txtRoomCapacity.Text) || string.IsNullOrWhiteSpace(txtRoomRate.Text) || 
-                string.IsNullOrWhiteSpace(txtRoomStatus.Text) || string.IsNullOrWhiteSpace(txtRoomDescription.Text))
+            var message = RoomsBLL.RegisterRoom(txtRoomName.Text,txtRoomNo.Text, txtRoomCapacity.Text, txtRoomRate.Text, txtRoomStatus.Text, txtRoomDescription.Text);
+
+            if (message is false)
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            var parameters = new[]
-                {
-                    new SqlParameter("@RoomName", SqlDbType.VarChar) { Value = txtRoomName.Text },
-                    new SqlParameter("@RoomNumber", SqlDbType.Int) { Value = Convert.ToInt32(txtRoomNo.Text)},
-                    new SqlParameter("@Capacity", SqlDbType.Int) { Value = Convert.ToInt32(txtRoomCapacity.Text) },
-                    new SqlParameter("@Rate", SqlDbType.Decimal) { Value = Convert.ToDecimal(txtRoomRate.Text)},
-                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = txtRoomStatus.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtRoomDescription.Text },
-                };
-
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateRoom, parameters);
 
             MessageBox.Show("Room Registered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

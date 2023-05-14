@@ -34,5 +34,47 @@ namespace HotelManagement.DAL
 
             return rooms;
         }
+
+        public static void SaveRoom(string roomName, int roomNo, int roomCapacity, decimal roomRate, string roomStatus, string description)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("@RoomName", SqlDbType.VarChar) { Value = roomName },
+                new SqlParameter("@RoomNumber", SqlDbType.Int) { Value = roomNo},
+                new SqlParameter("@Capacity", SqlDbType.Int) { Value = roomCapacity},
+                new SqlParameter("@Rate", SqlDbType.Decimal) { Value = roomRate},
+                new SqlParameter("@Status", SqlDbType.VarChar) { Value = roomStatus},
+                new SqlParameter("@Description", SqlDbType.VarChar) { Value = description},
+            };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateRoom, parameters);
+        }
+
+        public static void UpdateRoom(int id, string roomName, int roomNo, int roomCapacity, decimal roomRate, string roomStatus, string description)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = id },
+                new SqlParameter("@RoomName", SqlDbType.VarChar) { Value = roomName },
+                new SqlParameter("@RoomNumber", SqlDbType.Int) { Value = roomNo},
+                new SqlParameter("@Capacity", SqlDbType.Int) { Value = roomCapacity},
+                new SqlParameter("@Rate", SqlDbType.Decimal) { Value = roomRate},
+                new SqlParameter("@Status", SqlDbType.VarChar) { Value = roomStatus},
+                new SqlParameter("@Description", SqlDbType.VarChar) { Value = description},
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateRoom, parameters);
+
+        }
+
+        public static void DeleteRoom(int id)
+        {
+            var parameters = new[]
+                {
+                    new SqlParameter("@ID", SqlDbType.Int) { Value = id }
+                };
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteRoom, parameters);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL;
+﻿using HotelManagement.BLL;
+using HotelManagement.DAL;
 using HotelManagement.DAL.Helpers;
 using HotelManagement.Employees;
 using System;
@@ -24,7 +25,7 @@ namespace HotelManagement.Customers
 
         private void CustomersMainForm_Load(object sender, EventArgs e)
         {
-            LoadData();
+            customersBindingSource.DataSource = CustomersBLL.LoadData();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace HotelManagement.Customers
             {
                 registerCustomer.ShowDialog();
             }
-            LoadData();
+            customersBindingSource.DataSource = CustomersBLL.LoadData();
         }
 
         private int ID;
@@ -57,42 +58,30 @@ namespace HotelManagement.Customers
                 {
                     updateCustomerForm.customerData = selectedRows;
                     updateCustomerForm.ShowDialog();
-                    selectedRows.Clear();
                 }
                 else
                 {
                     MessageBox.Show("Please Select Record to Update");
                 }
             }
-            LoadData();
+            customersBindingSource.DataSource = CustomersBLL.LoadData();
+            selectedRows.Clear();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = CustomersBLL.DeleteCustomer(ID);
+
+            if (message is true)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
-
                 MessageBox.Show("Record Deleted Successfully!");
-                LoadData();
+                customersBindingSource.DataSource = CustomersBLL.LoadData();
             }
             else
             {
                 MessageBox.Show("Please Select Record to Delete");
             }
             selectedRows.Clear();
-        }
-
-        //-------------------------------------------
-        public void LoadData()
-        {
-            var employees = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetCustomers, null).ToCustomerList();
-            customersBindingSource.DataSource = employees;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,7 +99,7 @@ namespace HotelManagement.Customers
             this.Controls.Clear();
             InitializeComponent();
 
-            LoadData();
+            customersBindingSource.DataSource = CustomersBLL.LoadData();
         }
     }
 }

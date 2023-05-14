@@ -1,4 +1,5 @@
-﻿using HotelManagement.DAL.Helpers;
+﻿using HotelManagement.BLL;
+using HotelManagement.DAL.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,25 +38,17 @@ namespace HotelManagement.Room
 
         private void roomUpdatebtn_Click(object sender, EventArgs e)
         {
-            if (ID != 0)
+            var message = RoomsBLL.UpdateRoom(ID, txtRoomName.Text, txtRoomNo.Text, txtRoomCapacity.Text, txtRoomRate.Text ,txtRoomStatus.Text, txtRoomDescription.Text);
+            if (message is false)
             {
-                var parameters = new[]
-                {
-                    new SqlParameter("@ID", SqlDbType.Int) { Value = ID },
-                    new SqlParameter("@RoomName", SqlDbType.VarChar) { Value = txtRoomName.Text },
-                    new SqlParameter("@RoomNumber", SqlDbType.Int) { Value = Convert.ToInt32(txtRoomNo.Text)},
-                    new SqlParameter("@Capacity", SqlDbType.Int) { Value = Convert.ToInt32(txtRoomCapacity.Text) },
-                    new SqlParameter("@Rate", SqlDbType.Decimal) { Value = Convert.ToDecimal(txtRoomRate.Text)},
-                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = txtRoomStatus.Text },
-                    new SqlParameter("@Description", SqlDbType.VarChar) { Value = txtRoomDescription.Text },
-                };
-
-                var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateRoom, parameters);
-
-                MessageBox.Show("Record Updated Successfully!");
-                this.Close();
+                MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            MessageBox.Show("Room Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             roomData.Clear();
+            this.Close();
         }
 
         private void cancelbtn_Click(object sender, EventArgs e)
