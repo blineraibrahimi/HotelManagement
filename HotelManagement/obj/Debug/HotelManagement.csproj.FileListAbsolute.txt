@@ -73,3 +73,4 @@ C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\D
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Employees.EmployeesMainFrom.sq.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.HouseKeepingMain.sq.resources
 C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Room.RoomsMainForm.sq.resources
+C:\Users\Kaltrina\Desktop\blinera - uni\TI\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Payment.UpdatePayment.resources

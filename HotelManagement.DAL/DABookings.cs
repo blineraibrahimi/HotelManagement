@@ -57,9 +57,48 @@ namespace HotelManagement.DAL
                     new SqlParameter("@BookingId", SqlDbType.Int) { Direction = ParameterDirection.Output }
                 };
 
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateBooking, parameters);
+            if (status == "Confirmed")
+            {
+                var parametersRoomStatus = new[]
+                {
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
+                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = "Booked" },
+                };
 
+                var resultsRoomStatus = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.ChangeRoomStatus, parametersRoomStatus);
+            }
+            else if (status == "Cancelled")
+            {
+                var parametersRoomStatus = new[]
+                {
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
+                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = "Available" },
+                };
+
+                var resultsRoomStatus = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.ChangeRoomStatus, parametersRoomStatus);
+            }
+            else if (status == "Pending")
+            {
+                var parametersRoomStatus = new[]
+                {
+                    new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId },
+                    new SqlParameter("@Status", SqlDbType.VarChar) { Value = "Reserved" },
+                };
+
+                var resultsRoomStatus = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.ChangeRoomStatus, parametersRoomStatus);
+            }
+
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreateBooking, parameters);
             int bookingId = Convert.ToInt32(parameters[parameters.Length - 1].Value);
+
+            var parametersInvoice = new[]
+            {
+                new SqlParameter("@BookingID", SqlDbType.Int) { Value = bookingId },
+                new SqlParameter("@Amount", SqlDbType.Decimal) { Value = totalCost },
+                new SqlParameter("@Status", SqlDbType.VarChar) { Value = "Pending" },
+            };
+
+            DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.CreatePaymentWhenBooking, parametersInvoice);
 
             return bookingId;
         }

@@ -46,6 +46,7 @@
     <Compile Include="DACustomers.cs" />
     <Compile Include="DAEmployees.cs" />
     <Compile Include="DAHouseKeeping.cs" />
+    <Compile Include="DAPayment.cs" />
     <Compile Include="DARooms.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\StoredProcedures.cs" />

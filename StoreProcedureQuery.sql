@@ -283,3 +283,92 @@ BEGIN
 END
 GO
 --==========================================
+GO
+CREATE PROCEDURE ChangeRoomStatus
+	@RoomID int,
+	@Status varchar(10)
+AS
+BEGIN
+	UPDATE Rooms SET [Status] = @Status WHERE RoomId = @RoomID
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE GetAvailableRooms 
+AS
+BEGIN
+	SELECT RoomID, RoomName, RoomNumber, Capacity, Rate, [Status], [Description] FROM  HotelManagementDB.dbo.Rooms WHERE [Status] = 'Available'
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdateRoomAvailability 
+AS
+BEGIN
+	UPDATE Rooms SET [Status] = 'Available'
+	FROM Rooms
+	INNER JOIN Bookings ON Rooms.RoomId = Bookings.RoomId
+	WHERE Bookings.CheckOut < GETDATE()
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE CreatePaymentWhenBooking
+	@BookingID int,
+	@Amount decimal,
+	@Status nvarchar(10)
+AS
+BEGIN
+	INSERT INTO HotelManagementDB.dbo.Payments(BookingID, Amount, PaymentDate, [Status])
+    VALUES (@BookingID, @Amount, 1/1/1, @Status);
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE GetPayments
+AS
+BEGIN
+	SELECT PaymentID, BookingID, Amount, PaymentDate, PaymentDetails, PaymentType, [Status], [Description] FROM HotelManagementDB.dbo.Payments
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE UpdatePayment
+    @Id INT,
+	@BookingID int,
+	@Amount decimal,
+	@PaymentType varchar(20),
+	@PaymentDetails varchar(255),
+	@PaymentDate datetime,
+	@Status nvarchar(10),
+	@Description nvarchar(255)
+AS
+BEGIN
+    UPDATE Payments SET BookingID = @BookingID, Amount = @Amount, PaymentType = @PaymentType, PaymentDetails = @PaymentDetails, PaymentDate = @PaymentDate, [Status] = @Status, [Description] = @Description
+    WHERE PaymentID = @Id;
+END
+GO
+--==========================================
+GO
+CREATE PROCEDURE DeletePayment
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Payments WHERE PaymentID = @Id;
+END
+GO
+
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================
+--==========================================

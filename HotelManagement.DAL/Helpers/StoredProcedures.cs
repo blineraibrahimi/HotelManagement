@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace HotelManagement.DAL.Helpers
 {
@@ -34,9 +36,15 @@ namespace HotelManagement.DAL.Helpers
         public const string DeleteBooking = "DeleteBooking";
         public const string CreateVisitor = "CreateVisitor";
 
-
         public const string SaveCustomerBooking = "SaveCustomerBooking";
+        public const string ChangeRoomStatus = "ChangeRoomStatus";
+        public const string GetAvailableRooms = "GetAvailableRooms";
+        public const string UpdateRoomAvailability = "UpdateRoomAvailability";
+        public const string CreatePaymentWhenBooking = "CreatePaymentWhenBooking";
 
+        public const string GetPayments = "GetPayments";
+        public const string DeletePayment = "DeletePayment";
+        public const string UpdatePayment = "UpdatePayment";
 
     }
 }

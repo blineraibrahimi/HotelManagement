@@ -32,7 +32,7 @@ namespace HotelManagement.HouseKeeping
             var selectedRoom = (BO.Room)cmbRoom.SelectedItem;
             var selectedEmployee = (BO.Employees)cmbEmployee.SelectedItem;
 
-            var message = HouseKeepingBLL.RegisterHouseKeeping(selectedEmployee.ID, selectedRoom.ID, houseKeepingDatePicker.Value, txtRoomStatus.Text, txtDescription.Text);
+            var message = HouseKeepingBLL.RegisterHouseKeeping(selectedEmployee.ID, selectedRoom.ID, houseKeepingDatePicker.Value, cmbHouseKeepingStatus.SelectedItem.ToString(), txtDescription.Text);
             if (message is false)
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

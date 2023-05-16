@@ -52,6 +52,7 @@ namespace HotelManagement.BLL
 
         public static object LoadData()
         {
+            DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.UpdateRoomAvailability, null);
             var bookings = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetBookings, null).ToBookingList();
             return bookings;
         }
@@ -66,7 +67,7 @@ namespace HotelManagement.BLL
 
         public static object LoadRoomCMB()
         {
-            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
+            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetAvailableRooms, null).ToRoomList();
             rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
 
             return rooms;
@@ -92,6 +93,9 @@ namespace HotelManagement.BLL
             }
 
             int bookingId = DABookings.RegisterBooking(empId, roomId, bookingDate, checkIn, checkout, rangeOfDays, totalCost, status, description);
+
+            
+
             return bookingId;
         }
 

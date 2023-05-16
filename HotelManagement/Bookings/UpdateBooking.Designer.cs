@@ -32,7 +32,6 @@ namespace HotelManagement.Bookings
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBooking));
             this.label4 = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.checkOutDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -52,6 +51,7 @@ namespace HotelManagement.Bookings
             this.txtRangeOfDays = new System.Windows.Forms.TextBox();
             this.cancelbtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -62,13 +62,6 @@ namespace HotelManagement.Bookings
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 108;
             this.label4.Text = "Status";
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(207, 421);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(242, 22);
-            this.txtStatus.TabIndex = 107;
             // 
             // label3
             // 
@@ -92,7 +85,7 @@ namespace HotelManagement.Bookings
             this.checkOutDatePicker.Name = "checkOutDatePicker";
             this.checkOutDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkOutDatePicker.TabIndex = 104;
-            this.checkOutDatePicker.Value = DateTime.Now;
+            this.checkOutDatePicker.Value = new System.DateTime(2023, 5, 14, 14, 37, 5, 705);
             this.checkOutDatePicker.ValueChanged += new System.EventHandler(this.checkOutDatePicker_ValueChanged);
             // 
             // label2
@@ -110,7 +103,7 @@ namespace HotelManagement.Bookings
             this.checkInDatePicker.Name = "checkInDatePicker";
             this.checkInDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkInDatePicker.TabIndex = 102;
-            this.checkInDatePicker.Value = DateTime.Now;
+            this.checkInDatePicker.Value = new System.DateTime(2023, 5, 14, 14, 37, 5, 710);
             // 
             // label1
             // 
@@ -146,7 +139,7 @@ namespace HotelManagement.Bookings
             this.bookingDatePicker.Name = "bookingDatePicker";
             this.bookingDatePicker.Size = new System.Drawing.Size(241, 22);
             this.bookingDatePicker.TabIndex = 98;
-            this.bookingDatePicker.Value = DateTime.Now;
+            this.bookingDatePicker.Value = new System.DateTime(2023, 5, 14, 14, 37, 5, 718);
             // 
             // label7
             // 
@@ -237,16 +230,30 @@ namespace HotelManagement.Bookings
             this.updatebtn.UseVisualStyleBackColor = true;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DisplayMember = "ID";
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Confirmed",
+            "Cancelled"});
+            this.cmbStatus.Location = new System.Drawing.Point(208, 420);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(241, 24);
+            this.cmbStatus.TabIndex = 111;
+            this.cmbStatus.ValueMember = "ID";
+            // 
             // UpdateBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(536, 562);
+            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTotalCost);
             this.Controls.Add(this.checkOutDatePicker);
@@ -277,7 +284,6 @@ namespace HotelManagement.Bookings
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotalCost;
         private System.Windows.Forms.DateTimePicker checkOutDatePicker;
@@ -297,5 +303,6 @@ namespace HotelManagement.Bookings
         private System.Windows.Forms.TextBox txtRangeOfDays;
         private System.Windows.Forms.Button cancelbtn;
         private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

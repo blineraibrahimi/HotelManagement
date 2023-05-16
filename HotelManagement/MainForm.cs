@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BLL;
 using HotelManagement.Bookings;
 using HotelManagement.Customers;
 using HotelManagement.Employees;
+using HotelManagement.Payment;
 using HotelManagement.Room;
 
 namespace HotelManagement
@@ -20,6 +22,7 @@ namespace HotelManagement
         public MainForm()
         {
             InitializeComponent();
+            dataGridView1.DataSource = BookingBLL.LoadData();
         }
 
         private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,6 +65,22 @@ namespace HotelManagement
             }
         }
 
+        private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var paymentForm = new PaymentMainForm())
+            {
+                paymentForm.ShowDialog();
+            }
+        }
+
+        private void btnBookRoom_Click(object sender, EventArgs e)
+        {
+            using (var bookroom = new RegisterBooking())
+            {
+                bookroom.ShowDialog();
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBox1.SelectedIndex)
@@ -76,6 +95,9 @@ namespace HotelManagement
 
             this.Controls.Clear();
             InitializeComponent();
+            dataGridView1.DataSource = BookingBLL.LoadData();
         }
+
+
     }
 }

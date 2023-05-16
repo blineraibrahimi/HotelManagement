@@ -34,7 +34,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtRoomDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtRoomStatus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtRoomRate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.cancelbtn = new System.Windows.Forms.Button();
+            this.txtRoomStatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // roomUpdatebtn
@@ -90,13 +90,6 @@
             this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 45;
             this.label5.Text = "Status";
-            // 
-            // txtRoomStatus
-            // 
-            this.txtRoomStatus.Location = new System.Drawing.Point(165, 276);
-            this.txtRoomStatus.Name = "txtRoomStatus";
-            this.txtRoomStatus.Size = new System.Drawing.Size(242, 22);
-            this.txtRoomStatus.TabIndex = 44;
             // 
             // label4
             // 
@@ -172,6 +165,13 @@
             this.cancelbtn.UseVisualStyleBackColor = true;
             this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
+            // txtRoomStatus
+            // 
+            this.txtRoomStatus.Location = new System.Drawing.Point(165, 276);
+            this.txtRoomStatus.Name = "txtRoomStatus";
+            this.txtRoomStatus.Size = new System.Drawing.Size(242, 22);
+            this.txtRoomStatus.TabIndex = 44;
+            // 
             // UpdateRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,7 +210,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtRoomDescription;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtRoomStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtRoomRate;
         private System.Windows.Forms.Label label3;
@@ -220,5 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRoomName;
         private System.Windows.Forms.Button cancelbtn;
+        private System.Windows.Forms.TextBox txtRoomStatus;
     }
 }

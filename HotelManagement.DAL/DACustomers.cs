@@ -80,7 +80,7 @@ namespace HotelManagement.DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = id }
             };
 
-            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteBooking, parameters);
+            var result = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.DeleteCustomer, parameters) ;
         }
     }
 }

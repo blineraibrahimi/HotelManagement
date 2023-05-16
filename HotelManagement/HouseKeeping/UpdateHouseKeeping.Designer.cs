@@ -38,12 +38,12 @@ namespace HotelManagement.HouseKeeping
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtRoomStatus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cancelbtn = new System.Windows.Forms.Button();
             this.empUpdatebtn = new System.Windows.Forms.Button();
+            this.cmbHouseKeepingStatus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmbRoom
@@ -70,7 +70,7 @@ namespace HotelManagement.HouseKeeping
             this.houseKeepingDatePicker.Name = "houseKeepingDatePicker";
             this.houseKeepingDatePicker.Size = new System.Drawing.Size(241, 22);
             this.houseKeepingDatePicker.TabIndex = 84;
-            this.houseKeepingDatePicker.Value = DateTime.Now;
+            this.houseKeepingDatePicker.Value = new System.DateTime(2023, 5, 14, 14, 34, 49, 455);
             // 
             // label9
             // 
@@ -107,14 +107,6 @@ namespace HotelManagement.HouseKeeping
             this.label4.Size = new System.Drawing.Size(84, 16);
             this.label4.TabIndex = 79;
             this.label4.Text = "Room Status";
-            // 
-            // txtRoomStatus
-            // 
-            this.txtRoomStatus.Location = new System.Drawing.Point(203, 236);
-            this.txtRoomStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRoomStatus.Name = "txtRoomStatus";
-            this.txtRoomStatus.Size = new System.Drawing.Size(241, 22);
-            this.txtRoomStatus.TabIndex = 78;
             // 
             // label3
             // 
@@ -163,12 +155,29 @@ namespace HotelManagement.HouseKeeping
             this.empUpdatebtn.UseVisualStyleBackColor = true;
             this.empUpdatebtn.Click += new System.EventHandler(this.empUpdatebtn_Click);
             // 
+            // cmbHouseKeepingStatus
+            // 
+            this.cmbHouseKeepingStatus.FormattingEnabled = true;
+            this.cmbHouseKeepingStatus.Items.AddRange(new object[] {
+            "Cleaned",
+            "Occupied",
+            "Vacant",
+            "Do not disturb",
+            "Inspected",
+            "Out of Order",
+            "Ready"});
+            this.cmbHouseKeepingStatus.Location = new System.Drawing.Point(203, 233);
+            this.cmbHouseKeepingStatus.Name = "cmbHouseKeepingStatus";
+            this.cmbHouseKeepingStatus.Size = new System.Drawing.Size(241, 24);
+            this.cmbHouseKeepingStatus.TabIndex = 89;
+            // 
             // UpdateHouseKeeping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(517, 401);
+            this.Controls.Add(this.cmbHouseKeepingStatus);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.empUpdatebtn);
             this.Controls.Add(this.cmbRoom);
@@ -178,7 +187,6 @@ namespace HotelManagement.HouseKeeping
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtRoomStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -201,11 +209,11 @@ namespace HotelManagement.HouseKeeping
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtRoomStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cancelbtn;
         private System.Windows.Forms.Button empUpdatebtn;
+        private System.Windows.Forms.ComboBox cmbHouseKeepingStatus;
     }
 }

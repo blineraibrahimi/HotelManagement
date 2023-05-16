@@ -121,39 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="employeesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 24</value>
-  </data>
-  <data name="employeesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Employees</value>
-  </data>
-  <data name="customerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 24</value>
-  </data>
-  <data name="customerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Customer</value>
-  </data>
-  <data name="roomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 24</value>
-  </data>
-  <data name="roomsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 24</value>
-  </data>
-  <data name="roomsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rooms</value>
-  </data>
-  <data name="houseKeepingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 24</value>
-  </data>
-  <data name="houseKeepingToolStripMenuItem.Text" xml:space="preserve">
-    <value>House Keeping</value>
-  </data>
-  <data name="bookARoomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
-  </data>
-  <data name="bookARoomToolStripMenuItem.Text" xml:space="preserve">
-    <value>Book a room</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -181,7 +148,46 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="bookARoomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 24</value>
+  </data>
+  <data name="bookARoomToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="paymentsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 24</value>
+  </data>
+  <data name="paymentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Payments</value>
+  </data>
+  <data name="customerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
+  </data>
+  <data name="customerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="roomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 24</value>
+  </data>
+  <data name="houseKeepingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 24</value>
+  </data>
+  <data name="houseKeepingToolStripMenuItem.Text" xml:space="preserve">
+    <value>House Keeping</value>
+  </data>
+  <data name="roomsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 24</value>
+  </data>
+  <data name="roomsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="employeesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 24</value>
+  </data>
+  <data name="employeesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Employees</value>
   </data>
   <data name="comboBox1.Items" xml:space="preserve">
     <value>English</value>
@@ -190,7 +196,7 @@
     <value>Shqip</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 57</value>
+    <value>122, 67</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 24</value>
@@ -208,13 +214,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 60</value>
+    <value>37, 70</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 16</value>
@@ -235,6 +241,159 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="bookingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
+  </metadata>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 130</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>996, 399</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="iDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="iDDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="iDDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="roomNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Room name</value>
+  </data>
+  <data name="roomNameDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="roomNameDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="employeeNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Employee name</value>
+  </data>
+  <data name="employeeNameDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="employeeNameDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="employeeLastNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Employee lastname</value>
+  </data>
+  <data name="employeeLastNameDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="employeeLastNameDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="bookingDateDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Booking date</value>
+  </data>
+  <data name="bookingDateDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="bookingDateDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="checkInDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Checkin date</value>
+  </data>
+  <data name="checkInDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkInDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="checkOutDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Checkout date</value>
+  </data>
+  <data name="checkOutDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkOutDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="rangeOfDaysDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Range of days</value>
+  </data>
+  <data name="rangeOfDaysDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="rangeOfDaysDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="totalCostDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Total cost</value>
+  </data>
+  <data name="totalCostDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="totalCostDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="statusDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="statusDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="statusDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="descriptionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="descriptionDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="descriptionDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="bookingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
+  </metadata>
+  <data name="btnBookRoom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>812, 62</value>
+  </data>
+  <data name="btnBookRoom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 33</value>
+  </data>
+  <data name="btnBookRoom.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnBookRoom.Text" xml:space="preserve">
+    <value>Book Room</value>
+  </data>
+  <data name="&gt;&gt;btnBookRoom.Name" xml:space="preserve">
+    <value>btnBookRoom</value>
+  </data>
+  <data name="&gt;&gt;btnBookRoom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBookRoom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBookRoom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -244,7 +403,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1067, 666</value>
+    <value>1067, 568</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1387,10 +1546,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Hotel Management.</value>
   </data>
-  <data name="&gt;&gt;employeesToolStripMenuItem.Name" xml:space="preserve">
-    <value>employeesToolStripMenuItem</value>
+  <data name="&gt;&gt;bookARoomToolStripMenuItem.Name" xml:space="preserve">
+    <value>bookARoomToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;employeesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;bookARoomToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paymentsToolStripMenuItem.Name" xml:space="preserve">
+    <value>paymentsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;paymentsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;customerToolStripMenuItem.Name" xml:space="preserve">
@@ -1405,23 +1570,95 @@
   <data name="&gt;&gt;roomToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;roomsToolStripMenuItem.Name" xml:space="preserve">
-    <value>roomsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;roomsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;houseKeepingToolStripMenuItem.Name" xml:space="preserve">
     <value>houseKeepingToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;houseKeepingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bookARoomToolStripMenuItem.Name" xml:space="preserve">
-    <value>bookARoomToolStripMenuItem</value>
+  <data name="&gt;&gt;roomsToolStripMenuItem.Name" xml:space="preserve">
+    <value>roomsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;bookARoomToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;roomsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;employeesToolStripMenuItem.Name" xml:space="preserve">
+    <value>employeesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;employeesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>iDDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;roomNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>roomNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;roomNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;employeeNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>employeeNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;employeeNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;employeeLastNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>employeeLastNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;employeeLastNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bookingDateDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>bookingDateDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;bookingDateDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkInDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>checkInDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;checkInDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkOutDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>checkOutDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;checkOutDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rangeOfDaysDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>rangeOfDaysDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;rangeOfDaysDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;totalCostDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>totalCostDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;totalCostDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>statusDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;statusDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>descriptionDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bookingsBindingSource.Name" xml:space="preserve">
+    <value>bookingsBindingSource</value>
+  </data>
+  <data name="&gt;&gt;bookingsBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

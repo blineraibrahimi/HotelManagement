@@ -144,7 +144,7 @@
     <value>5</value>
   </data>
   <data name="updatebtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>786, 409</value>
+    <value>975, 412</value>
   </data>
   <data name="updatebtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 31</value>
@@ -168,7 +168,7 @@
     <value>4</value>
   </data>
   <data name="deletebtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 409</value>
+    <value>774, 412</value>
   </data>
   <data name="deletebtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 31</value>
@@ -364,7 +364,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1203, 455</value>
+    <value>1203, 463</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

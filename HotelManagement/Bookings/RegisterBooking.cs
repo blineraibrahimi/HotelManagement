@@ -66,6 +66,8 @@ namespace HotelManagement.Bookings
                 DABookingCustomer.SaveCustomerAndBookingToDB(bookingID, visitorID);
             }
 
+
+
             if (bookingID == 0)
             {
                 MessageBox.Show("Please fill all the inputs!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

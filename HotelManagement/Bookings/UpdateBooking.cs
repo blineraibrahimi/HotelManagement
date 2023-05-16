@@ -51,7 +51,7 @@ namespace HotelManagement.Bookings
                 checkOutDatePicker.Value = obj.CheckOut;
                 txtRangeOfDays.Text = Convert.ToString(obj.RangeOfDays);
                 txtTotalCost.Text = Convert.ToString(obj.TotalCost);
-                txtStatus.Text = obj.Status;
+                cmbStatus.Text = obj.Status;
                 txtDescription.Text = obj.Description;
             }
         }
@@ -63,7 +63,7 @@ namespace HotelManagement.Bookings
 
             var message = BookingBLL.UpdateBooking(ID, selectedEmployee.ID, selectedRoom.ID, bookingDatePicker.Value, 
                 checkInDatePicker.Value, checkOutDatePicker.Value, Convert.ToInt32(txtRangeOfDays.Text), Convert.ToDecimal(txtTotalCost.Text),
-                txtStatus.Text, txtDescription.Text);
+                cmbStatus.SelectedItem.ToString(), txtDescription.Text);
 
             if (message is true)
             {
