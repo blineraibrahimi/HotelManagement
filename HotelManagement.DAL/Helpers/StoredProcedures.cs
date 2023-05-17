@@ -41,6 +41,7 @@ namespace HotelManagement.DAL.Helpers
         public const string GetAvailableRooms = "GetAvailableRooms";
         public const string UpdateRoomAvailability = "UpdateRoomAvailability";
         public const string CreatePaymentWhenBooking = "CreatePaymentWhenBooking";
+        public const string GetBookingsBasedOnRoomID = "GetBookingsBasedOnRoom";
 
         public const string GetPayments = "GetPayments";
         public const string DeletePayment = "DeletePayment";

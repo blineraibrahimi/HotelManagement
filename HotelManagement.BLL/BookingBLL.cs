@@ -73,6 +73,14 @@ namespace HotelManagement.BLL
             return rooms;
         }
 
+        public static object LoadRoomFilterCMB()
+        {
+            var rooms = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetRooms, null).ToRoomList();
+            rooms.Insert(0, new BO.Room { ID = 0, RoomName = "Select a room" });
+
+            return rooms;
+        }
+
         //public static object Test()
         //{
         //    BO.Employees selectedRoom = cmbEmployee.SelectedItem as BO.Employees;

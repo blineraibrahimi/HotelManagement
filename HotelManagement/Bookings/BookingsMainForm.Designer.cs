@@ -48,6 +48,8 @@
             this.updatebtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -180,11 +182,25 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // cmbFilter
+            // 
+            this.cmbFilter.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbFilter, "cmbFilter");
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // BookingsMainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.deletebtn);
@@ -220,5 +236,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFilter;
+        private System.Windows.Forms.Label label2;
     }
 }

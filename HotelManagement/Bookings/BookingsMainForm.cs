@@ -21,11 +21,14 @@ namespace HotelManagement.Bookings
         public BookingsMainForm()
         {
             InitializeComponent();
+            cmbFilter.DisplayMember = "RoomName";
+            cmbFilter.ValueMember = "ID";
         }
 
         private void BookingsMainForm_Load(object sender, EventArgs e)
         {
             bookingsBindingSource.DataSource = BookingBLL.LoadData();
+            cmbFilter.DataSource = BookingBLL.LoadRoomFilterCMB();
         }
 
         private void createNewbtn_Click(object sender, EventArgs e)
@@ -100,6 +103,25 @@ namespace HotelManagement.Bookings
             InitializeComponent();
 
             bookingsBindingSource.DataSource = BookingBLL.LoadData();
+        }
+
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedClub = (BO.Room)cmbFilter.SelectedItem;
+
+            if (selectedClub.ID != 0)
+            {
+                var parameters = new[]
+                    {
+                        new SqlParameter("@roomID", SqlDbType.Int) { Value = selectedClub.ID }
+                    };
+
+                bookingDataGridView.DataSource = DatabaseHelper.ExecuteStoredProcedure(StoredProcedures.GetBookingsBasedOnRoomID, parameters).ToBookingList();
+            }
+            else 
+            {
+                bookingDataGridView.DataSource = BookingBLL.LoadData();
+            }
         }
     }
 }
